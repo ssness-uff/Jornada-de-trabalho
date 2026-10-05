@@ -742,7 +742,7 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
   }
   .section.hero { break-before: avoid; page-break-before: auto; }
 
-  /* Chrome do slide (filete superior + rodapé), via pseudos da própria seção */
+  /* Chrome do slide (filete superior + rodapé) */
   .section::before {
     content: "SSN/UFF · Jornada Híbrida Otimizada 2×3";
     position: absolute;
@@ -772,7 +772,7 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
     line-height: 1;
   }
 
-  /* ── Capa (hero) clara: título sempre visível ── */
+  /* ── Capa (hero) clara ── */
   .hero {
     background: #ffffff !important;
     border: none;
@@ -826,7 +826,7 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
     margin-bottom: 6mm;
   }
 
-  /* ── Grades forzadas (anula media queries de tela) ── */
+  /* ── Grades forçadas ── */
   .kpi-grid { grid-template-columns: repeat(4, 1fr) !important; border: 1px solid #d8d5cc; }
   .grid-2 { grid-template-columns: 1fr 1fr !important; gap: 8mm; }
   .grid-3 { grid-template-columns: repeat(3, 1fr) !important; border: 1px solid #d8d5cc; }
@@ -857,7 +857,7 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
   td.highlight { background: #f7efe5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-  /* ── Semana proposta: 5 quadros em UMA linha, compactos ── */
+  /* ── Semana proposta: 5 quadros em UMA linha ── */
   .scale-week { grid-template-columns: repeat(5, 1fr) !important; gap: 3mm !important; }
   .day-cell { padding: 4mm 2mm !important; }
   .day-cell .day-name { font-size: 7.5px; margin-bottom: 2mm; letter-spacing: .18em; }
@@ -1212,13 +1212,13 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
                 <td><strong>Coordenação de Curso</strong></td>
                 <td><span class="badge warn"><span class="dot"></span>Modelo misto</span></td>
                 <td>Mista</td>
-                <td>4 servidores ativos: 1 presencial 100%, 1 presencial 100% por 1 ano e 3 híbridos — há espaço para rodízio melhor</td>
+                <td>5 servidores ativos: 1 presencial 100%, 1 presencial 100% por 1 ano e 3 híbridos — há espaço para melhoria do rodízio e racionalização do atendimento presencial</td>
               </tr>
               <tr>
                 <td><strong>Direção</strong></td>
                 <td><span class="badge info"><span class="dot"></span>Potencial de revisão</span></td>
                 <td>Mista com entregas agendáveis</td>
-                <td>Poderia adotar lógica por demanda, como outras escolas da UFF já fazem</td>
+                <td>2 servidores ativos, trabalho híbrido. Poderia adotar a lógica de atendimento presencial por demanda (email de comunicação + dias específicos), como outras escolas da UFF já fazem, além de haver espaço para racionalização do atendimento presencial.</td>
               </tr>
               <tr>
                 <td><strong>SSN — proposta</strong></td>
@@ -1235,7 +1235,7 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
         </div>
 
         <div class="callout" style="margin-top:14px">
-          <strong>Coordenação de Curso:</strong> com 4 servidores ativos e perfis heterogêneos (um presencial integral, um presencial integral por um ano, três em regime híbrido), há espaço para um <strong>rodízio mais equilibrado</strong> — o que reduziria a pressão sobre os servidores e ampliaria a flexibilidade do setor, sem perda de cobertura.
+          <strong>Coordenação de Curso:</strong> com 5 servidores ativos e perfis heterogêneos (um presencial integral, um presencial integral por um ano, três em regime híbrido), há espaço para um rodízio mais equilibrado — o que reduziria a pressão sobre os servidores e ampliaria a flexibilidade do setor, sem perda de cobertura.
         </div>
 
       </div>
@@ -1320,17 +1320,17 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
               <tr>
                 <td><strong>Patrícia</strong></td>
                 <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
                 <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
+                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
+                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
                 <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
               </tr>
               <tr>
                 <td><strong>Luiz</strong></td>
                 <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
+                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
+                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
                 <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
                 <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
               </tr>
               <tr>
@@ -1388,7 +1388,7 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
             <ul class="bullet-list">
               <li><i class="fa-solid fa-circle-check"></i><span>O SSN <strong>não tem problema algum em atender essa demanda</strong> — imprime sem restrições e continuará imprimindo.</span></li>
               <li><i class="fa-solid fa-circle-check"></i><span>Todos os docentes têm acesso ao <strong>Quadro de Horários</strong> e podem imprimir em qualquer lugar, se preferirem.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>A impressão pelo SSN permanece disponível nos dias presenciais (Ter–Qui).</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>A impressão pelo SSN permanecerá disponível nos dias presenciais (Ter–Qui).</span></li>
               <li><i class="fa-solid fa-circle-check"></i><span>Solicitações remotas continuam possíveis por e-mail e formulário, com retirada agendada.</span></li>
               <li><i class="fa-solid fa-circle-check"></i><span>Não é uma barreira à proposta — é um serviço que se mantém, com janela mais previsível.</span></li>
             </ul>
@@ -1401,6 +1401,7 @@ td.highlight { background: var(--accent-soft); color: var(--accent-text); font-w
               <li><i class="fa-solid fa-circle-check"></i><span>Demandas podem ser agendadas para os dias presenciais.</span></li>
               <li><i class="fa-solid fa-circle-check"></i><span>Digitalização progressiva reduz a dependência do acervo físico.</span></li>
               <li><i class="fa-solid fa-circle-check"></i><span>GEDOC centraliza e indexa documentos oficiais.</span></li>
+              <li><i class="fa-solid fa-circle-check"></i><span>Caso seja aceita a troca de escala, as impressões pedidas com antecedência para entrega eventual para segunda e sexta-feira serão entregues no escaninho do docente, perto da Direção.</span></li>
             </ul>
           </div>
         </div>
