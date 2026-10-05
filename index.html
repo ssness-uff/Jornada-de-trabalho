@@ -272,34 +272,6 @@ code, .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; letter-spa
   color: var(--ink-3);
 }
 .meta-item .value { color: var(--ink-0); font-weight: 500; }
-.progress-wrap {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 220px;
-}
-.progress-label {
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.progress-track {
-  flex: 1;
-  height: 6px;
-  background: var(--paper-3);
-  border-radius: var(--r-full);
-  overflow: hidden;
-}
-.progress-fill {
-  height: 100%;
-  width: 62%;
-  background: linear-gradient(90deg, var(--brand), var(--accent));
-  border-radius: var(--r-full);
-  transition: width .8s var(--t);
-}
 
 /* LAYOUT */
 .layout {
@@ -811,7 +783,6 @@ td.highlight {
   .timeline { grid-template-columns: repeat(2, 1fr); }
   .header-inner { padding: 18px; }
   .subbar-inner { padding: 12px 18px; }
-  .progress-wrap { width: 100%; margin-left: 0; }
 }
 @media (max-width: 760px) {
   .scale-week { grid-template-columns: repeat(2, 1fr); }
@@ -830,26 +801,33 @@ td.highlight {
   .orientation-btn { flex: 1; justify-content: center; }
 }
 
-/* PRINT — portrait default; orientation overridden dinamicamente via JS */
+/* PRINT — Regras para ocultar cabeçalho e rodapé e ajustar margens */
 @media print {
-  @page { size: A4 portrait; margin: 12mm 10mm; }
-  body { background: #fff !important; color: #131820 !important; font-size: 10.5px; }
-  .sidebar, .header-actions, .filter-block, .app-header::after,
-  .hero::after, .hero::before { display: none !important; }
-  .layout { grid-template-columns: 1fr; padding: 0; gap: 12px; max-width: 100%; }
-  .app-header {
-    background: #3a52d9 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    padding: 12px 0;
+  /* Zera a margem padrão do navegador para tentar remover cabeçalhos/rodapés */
+  @page { size: A4 portrait; margin: 0; }
+  
+  body { 
+    background: #fff !important; 
+    color: #131820 !important; 
+    font-size: 10.5px; 
+    padding: 12mm 10mm; /* Adiciona margem interna no lugar da margem do navegador */
   }
-  .app-header::before { display: none !important; }
+  
+  /* Oculta o cabeçalho e o rodapé do aplicativo */
+  .app-header, .app-footer, .sidebar, .header-actions, .filter-block, 
+  .app-header::after, .app-header::before, .hero::after, .hero::before { 
+    display: none !important; 
+  }
+  
+  .layout { grid-template-columns: 1fr; padding: 0; gap: 12px; max-width: 100%; }
   .subbar { display: none; }
+  
   .panel, .kpi, .mini-card, .tl-step, .callout, .day-cell {
     box-shadow: none !important;
     break-inside: avoid;
     page-break-inside: avoid;
   }
+  
   .hero {
     background: #4d6bfe !important;
     -webkit-print-color-adjust: exact;
@@ -917,10 +895,6 @@ td.highlight {
       <i class="fa-solid fa-layer-group"></i>
       <span class="label">Modelo</span>
       <span class="value">2×3 · Híbrido</span>
-    </div>
-    <div class="progress-wrap">
-      <span class="progress-label">Aderência ao NPGD</span>
-      <div class="progress-track"><div class="progress-fill"></div></div>
     </div>
   </div>
 </div>
@@ -1645,7 +1619,11 @@ function downloadPDF() {
   const style = document.createElement('style');
   style.id = 'dynamic-page-style';
   const sizeRule = currentOrientation === 'landscape' ? 'A4 landscape' : 'A4 portrait';
-  const margins = currentOrientation === 'landscape' ? '10mm 10mm' : '12mm 10mm';
+  
+  // Define margem 0 para tentar remover cabeçalhos/rodapés do navegador
+  // O padding é aplicado no body para manter o espaçamento visual
+  const margins = '0'; 
+  
   style.textContent = `@media print { @page { size: ${sizeRule}; margin: ${margins}; } }`;
   document.head.appendChild(style);
 
