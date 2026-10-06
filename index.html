@@ -79,6 +79,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.14;letter-spacing:-.02
 .card.bx{border:1px solid var(--line);border-radius:9px}
 .card h4{font-size:13px;margin-bottom:6px}.card p{font-size:11.5px;color:var(--muted)}
 .bn{font:500 34px/1 Fraunces,Georgia,serif;color:var(--orange);margin-bottom:8px}
+.bn.txt{font-size:26px}
 .flow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .fb{border:1px solid var(--line);border-radius:10px;padding:18px}
 .fb.hl{background:var(--bs);border-color:#dbe2f8}
@@ -151,13 +152,13 @@ tr:last-child td{border-bottom:0}
 .col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;border-radius:8px 8px 0 0}
 .col.open{background:var(--gs)}
 .bar{width:56%;min-height:6px;border-radius:5px 5px 0 0;background:var(--green);position:relative}
-.bar.empty{background:repeating-linear-gradient(45deg,#d9ddd9 0 6px,#eceeec 6px 12px)}
 .bar.rem{background:var(--blue)}
-.bv{position:absolute;top:-22px;left:0;right:0;text-align:center;font:600 13px Inter;color:var(--ink)}
+.bar.peak{background:var(--orange)}
 .cl{display:grid;gap:12px;padding:8px 4px}
 .cl div{text-align:center;font-size:10.5px;font-weight:700}
 .cl small{display:block;font-size:9px;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 .chtitle{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--soft);margin:0 0 12px}
+.scale{display:flex;justify-content:space-between;font-size:9.5px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:2px;padding:0 4px}
 .q{border:1px solid var(--line);border-radius:9px;padding:15px}
 .qna{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .q h4{font-size:11.5px;margin-bottom:5px}.q p{font-size:10.8px;color:var(--muted)}
@@ -264,11 +265,11 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
 <section class="section hero dark" id="decisao">
   <span class="eyebrow">Painel para discussão</span>
   <h2>Menos deslocamento por servidor. <span style="color:#d29b6b">Três dias de atendimento preservados.</span></h2>
-  <p>A proposta separa <strong>onde o servidor trabalha</strong> de <strong>quando o serviço atende</strong>. Cada servidor cumpre <strong>2 dias presenciais + 3 remotos</strong>; o SSN mantém <strong>atendimento presencial de terça a quinta</strong> e canal digital nos cinco dias úteis. Luiz — terça/quarta; Patrícia — quarta/quinta; quarta-feira é o dia de presença conjunta.</p>
+  <p>A proposta separa <strong>onde o servidor trabalha</strong> de <strong>quando o serviço atende</strong>. Cada servidor cumpre <strong>2 dias presenciais + 3 remotos</strong>; o SSN mantém <strong>atendimento presencial de terça a quinta</strong> e canal digital nos cinco dias úteis.</p>
   <div class="triad">
+    <div class="tri c"><i class="fa-solid fa-laptop"></i><div><small>Atendimento Digital</small><b>5 dias</b><span>segunda a sexta</span></div></div>
+    <div class="tri b"><i class="fa-solid fa-door-open"></i><div><small>SSN</small><b>3 dias</b><span>terça · quarta · quinta</span></div></div>
     <div class="tri a"><i class="fa-solid fa-user"></i><div><small>Servidor</small><b>2×3</b><span>2 presenciais · 3 remotos</span></div></div>
-    <div class="tri b"><i class="fa-solid fa-door-open"></i><div><small>SSN</small><b>3 dias físicos</b><span>terça · quarta · quinta</span></div></div>
-    <div class="tri c"><i class="fa-solid fa-laptop"></i><div><small>Canal digital</small><b>5 dias</b><span>segunda a sexta</span></div></div>
   </div>
 </section>
 
@@ -281,7 +282,7 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
     <div class="kpi"><div class="kl">Presencial por servidor</div><div class="kv">2</div><div class="kn">de 5 dias úteis</div></div>
   </div>
   <div class="panel" style="margin-top:20px">
-    <div class="ph"><div class="num">01</div><div><h3>A pergunta não é “presencial ou remoto?”</h3><p>É: quanto de presencialidade o serviço realmente precisa?</p></div></div>
+    <div class="ph"><div class="num">01</div><div><h3>O serviço precisa ser realmente presencial?</h3><p>A pergunta não é “presencial ou remoto?”</p></div></div>
     <div class="pb">
       <div class="flow">
         <div class="fb"><h4>Modelo atual</h4><div class="fbig">3 dias presenciais / servidor</div><p>Presença distribuída ao longo da semana, inclusive em dias destinados a rotinas predominantemente sistêmicas.</p></div>
@@ -396,7 +397,7 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
 
 <!-- ESCALA -->
 <section class="section panel" id="escala">
-  <div class="ph"><div class="num">05</div><div><h3>A escala proposta para Luiz e Patrícia</h3><p>O setor fica aberto presencialmente três dias; cada servidor cumpre dois</p></div></div>
+  <div class="ph"><div class="num">05</div><div><h3>A escala proposta para o Departamento</h3><p>O setor fica aberto presencialmente três dias; cada servidor cumpre dois</p></div></div>
   <div class="pb">
     <div class="triad" style="margin-top:0;margin-bottom:18px">
       <div class="tri a"><i class="fa-solid fa-user"></i><div><small>Servidor</small><b>2×3</b><span>2 presenciais · 3 remotos</span></div></div>
@@ -412,8 +413,8 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
     </div>
     <div class="tw"><div class="sp">
       <div class="sc h">Servidor / dia</div><div class="sc h">Seg</div><div class="sc h">Ter</div><div class="sc h">Qua</div><div class="sc h">Qui</div><div class="sc h">Sex</div>
-      <div class="sc n">Luiz</div><div class="sc rc">Remoto</div><div class="sc pc">Presencial</div><div class="sc pc">Presencial</div><div class="sc rc">Remoto</div><div class="sc rc">Remoto</div>
-      <div class="sc n">Patrícia</div><div class="sc rc">Remoto</div><div class="sc rc">Remoto</div><div class="sc pc">Presencial</div><div class="sc pc">Presencial</div><div class="sc rc">Remoto</div>
+      <div class="sc n">Luiz</div><div class="sc rc">On-line</div><div class="sc pc">Presencial</div><div class="sc pc">Presencial</div><div class="sc rc">On-line</div><div class="sc rc">On-line</div>
+      <div class="sc n">Patrícia</div><div class="sc rc">On-line</div><div class="sc rc">On-line</div><div class="sc pc">Presencial</div><div class="sc pc">Presencial</div><div class="sc rc">On-line</div>
       <div class="sc n">SSN · atendimento</div><div class="sc rc">Digital</div><div class="sc pc">Aberto</div><div class="sc pc">Aberto</div><div class="sc pc">Aberto</div><div class="sc rc">Digital</div>
     </div></div>
     <div class="callout green"><strong>Ponto-chave:</strong> a unidade permanece fisicamente aberta <strong>3 dias</strong> sem exigir 3 dias presenciais de cada servidor. A quarta-feira é deliberadamente o dia de presença conjunta.</div>
@@ -443,24 +444,26 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
 
 <!-- DEMANDA -->
 <section class="section panel" id="demanda">
-  <div class="ph"><div class="num">07</div><div><h3>Demanda presencial: por dia e por horário</h3><p>Registro de atendimentos presenciais em semanas de referência: quando a procura realmente se concentra</p></div></div>
+  <div class="ph"><div class="num">07</div><div><h3>Demanda presencial: por dia e por horário</h3><p>Intensidade relativa da procura presencial: quando ela realmente se concentra</p></div></div>
   <div class="pb">
     <div class="grid2" style="gap:28px">
       <div>
         <div class="chtitle">Por dia da semana</div>
         <div class="chart" id="chartD"></div><div class="cl" id="clD"></div>
+        <div class="scale"><span>Menor procura</span><span>Maior procura</span></div>
       </div>
       <div>
         <div class="chtitle">Por horário · 13h às 19h</div>
         <div class="chart" id="chartH"></div><div class="cl" id="clH"></div>
+        <div class="scale"><span>Menor procura</span><span>Maior procura</span></div>
       </div>
     </div>
     <div class="grid3">
-      <div class="card"><div class="bn" id="k1">—</div><h4>da demanda presencial em ter–qua–qui</h4><p>Percentual do total registrado nos três dias de atendimento físico.</p></div>
-      <div class="card"><div class="bn" id="k2">—</div><h4>atendimentos registrados</h4><p>Total das semanas de referência.</p></div>
-      <div class="card"><div class="bn" id="k3">—</div><h4>semanas de registro</h4><p>Período de observação que sustenta os gráficos.</p></div>
+      <div class="card"><div class="bn txt">Ter · Qui</div><h4>Dias de maior procura</h4><p>A procura presencial se concentra nos dias de atendimento físico, com pico na terça-feira.</p></div>
+      <div class="card"><div class="bn txt">13h · 17h</div><h4>Picos de horário</h4><p>Início da jornada e final da tarde concentram a maior parte das demandas ao balcão.</p></div>
+      <div class="card"><div class="bn txt">Seg · Sex</div><h4>Menor procura presencial</h4><p>Segunda e sexta têm baixa demanda física e ficam dedicadas ao atendimento digital e ao trabalho focado.</p></div>
     </div>
-    <div class="src">Fonte: registro interno de atendimentos do SSN (balcão e demandas presenciais).</div>
+    <div class="src">Leitura qualitativa, baseada na observação do atendimento ao balcão do Departamento; os gráficos indicam intensidade relativa, não contagens.</div>
   </div>
 </section>
 
@@ -479,7 +482,7 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
         <tr><td><strong>Quero resolver por e-mail</strong></td><td>Canal remoto disponível de segunda a sexta</td><td><span class="badge info">5 dias digitais</span></td></tr>
         <tr><td><strong>Preciso entregar/retirar algo</strong></td><td>Terça a quinta; pedidos podem ser antecipados remotamente</td><td><span class="badge ok">3 dias físicos</span></td></tr>
         <tr><td><strong>Preciso de atendimento excepcional</strong></td><td>Organização e agendamento conforme necessidade</td><td><span class="badge warn">Contingência</span></td></tr>
-        <tr><td><strong>Preciso saber quando ir à UFF</strong></td><td>Escala publicada na página da unidade e no aviso físico da secretaria</td><td><span class="badge info">Previsibilidade</span></td></tr>
+        <tr><td><strong>Preciso saber quando ir à UFF</strong></td><td>Escala publicada na página da unidade, comunicada por email e em aviso físico no Departamento</td><td><span class="badge info">Previsibilidade</span></td></tr>
       </tbody>
     </table></div>
   </div>
@@ -487,7 +490,7 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
 
 <!-- RISCOS -->
 <section class="section panel" id="riscos">
-  <div class="ph"><div class="num">09</div><div><h3>Objeções previsíveis — e respostas já incorporadas ao desenho</h3><p>Principais dúvidas e salvaguardas</p></div></div>
+  <div class="ph"><div class="num">09</div><div><h3>Principais dúvidas</h3><p>Objeções previsíveis, respostas já incorporadas ao desenho</p></div></div>
   <div class="pb"><div class="qna">
     <div class="q"><h4>“Quem vai atender na segunda e na sexta?”</h4><p>Nesses dias o SSN não abre presencialmente, mas mantém o canal remoto. Demandas que exigirem presença ficam para a janela presencial ou para agendamento.</p></div>
     <div class="q"><h4>“E se houver uma demanda física urgente?”</h4><p>Usa-se o mecanismo de exceção e agendamento, organizado pela equipe.</p></div>
@@ -505,8 +508,8 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
     <div class="grid2">
       <div class="card bx"><h4>Site do SSN / ESS</h4><p>Em destaque: <strong>“Atendimento presencial: terça, quarta e quinta”</strong> + canal remoto + horário.</p></div>
       <div class="card bx"><h4>Secretaria / porta</h4><p>Informação visual dos cinco dias, distinguindo presencial e remoto.</p></div>
-      <div class="card bx"><h4>Assinatura de e-mail</h4><p>“Atendimento presencial: Ter–Qua–Qui · Atendimento remoto: Seg–Sex”.</p></div>
-      <div class="card bx"><h4>Formulários</h4><p>Canal integrado para solicitação prévia e retirada na janela presencial.</p></div>
+      <div class="card bx"><h4>Assinatura de e-mail</h4><p>Atendimento presencial: Ter–Qua–Qui · Atendimento on-line: Seg–Sex. Solicitações prévias e retiradas em janela presencial.</p></div>
+      <div class="card bx"><h4>Comunicações gerais</h4><p>Comunicações em reuniões plenárias departamentais, em colegiados, por e-mail e na porta.</p></div>
     </div>
     <div class="callout green"><strong>Princípio:</strong> ninguém deve descobrir a escala depois de chegar ao campus.</div>
   </div>
@@ -585,12 +588,6 @@ body.one .onepage{display:block!important;padding:12mm 13mm}
 </footer>
 
 <script>
-/* ===== DADOS DO REGISTRO DE DEMANDA PRESENCIAL =====
-   Preencha com os totais reais. null = ainda sem registro (barras listradas). */
-const DEMANDA = { seg:null, ter:null, qua:null, qui:null, sex:null };
-const HORAS   = { "13h":null, "14h":null, "15h":null, "16h":null, "17h":null, "18h":null };
-const SEMANAS = null;
-
 /* ===== Linhas da Matriz de Soluções (print) ===== */
 const ROWS=[
  ["fa-arrow-trend-up","Acompanhamento Funcional — Promoção/Progressão","Controle de progressões e promoções do corpo docente do Departamento.","Contínuo"],
@@ -604,31 +601,22 @@ document.getElementById('rows').innerHTML=ROWS.map(r=>
  `<div class="srow"><div class="sic"><i class="fa-solid ${r[0]}"></i></div><div><b>${r[1]}</b><small>${r[2]}</small></div><div class="scat">Assuntos Docentes</div><div class="sfr">${r[3]}</div><div class="sst">● ATIVO</div><a class="sab" href="https://ssness-uff.github.io/Hub-de-Planilhas/" target="_blank" rel="noopener">Abrir <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>`
 ).join('');
 
-/* ===== Gráficos ===== */
-function draw(id,idL,labels,sub,vals,openIdx,ph){
-  const el=document.getElementById(id), lb=document.getElementById(idL), n=labels.length;
-  el.style.gridTemplateColumns=lb.style.gridTemplateColumns='repeat('+n+',1fr)';
-  const has=vals.every(v=>typeof v==='number'), max=has?Math.max(...vals,1):1;
+/* ===== Gráficos de demanda (intensidade relativa, escala 1–4; sem números exibidos) ===== */
+const DIA  = [1,4,2,3,1];        // Seg, Ter, Qua, Qui, Sex
+const HORA = [4,2,2,2,3,1];      // 13h, 14h, 15h, 16h, 17h, 18h
+function draw(id,idL,labels,sub,vals,cls){
+  const el=document.getElementById(id), lb=document.getElementById(idL);
+  el.style.gridTemplateColumns=lb.style.gridTemplateColumns='repeat('+labels.length+',1fr)';
   labels.forEach((l,i)=>{
-    const c=document.createElement('div'); c.className='col'+(openIdx.includes(i)?' open':'');
-    const b=document.createElement('div'); b.className='bar'+(has?(openIdx.includes(i)?'':' rem'):' empty');
-    b.style.height=((has?vals[i]/max:ph[i])*80)+'%';
-    if(has){const v=document.createElement('div');v.className='bv';v.textContent=vals[i];b.appendChild(v);}
+    const c=document.createElement('div'); c.className='col'+(cls[i]==='open'?' open':'');
+    const b=document.createElement('div'); b.className='bar'+(cls[i]==='rem'?' rem':cls[i]==='peak'?' peak':'');
+    b.style.height=(vals[i]/4*90)+'%';
     c.appendChild(b); el.appendChild(c);
     const d=document.createElement('div'); d.innerHTML=l+(sub?'<small>'+sub[i]+'</small>':''); lb.appendChild(d);
   });
-  return has;
 }
-const dv=['seg','ter','qua','qui','sex'].map(k=>DEMANDA[k]);
-const hasD=draw('chartD','clD',['Seg','Ter','Qua','Qui','Sex'],['Digital','Aberto','Aberto','Aberto','Digital'],dv,[1,2,3],[.35,.8,.95,.75,.3]);
-const hk=Object.keys(HORAS);
-draw('chartH','clH',hk,null,hk.map(k=>HORAS[k]),[],[.45,.7,.9,.85,.6,.35]);
-if(hasD){
-  const tot=dv.reduce((a,b)=>a+b,0), inO=dv[1]+dv[2]+dv[3];
-  document.getElementById('k1').textContent=Math.round(inO/tot*100)+'%';
-  document.getElementById('k2').textContent=tot;
-}
-if(typeof SEMANAS==='number') document.getElementById('k3').textContent=SEMANAS;
+draw('chartD','clD',['Seg','Ter','Qua','Qui','Sex'],['Digital','Aberto','Aberto','Aberto','Digital'],DIA,['rem','open','open','open','rem']);
+draw('chartH','clH',['13h','14h','15h','16h','17h','18h'],null,HORA,['peak','rem','rem','rem','peak','rem']);
 
 /* ===== Navegação lateral ===== */
 const items=[...document.querySelectorAll('.nav a')], secs=[...document.querySelectorAll('.section[id]')];
