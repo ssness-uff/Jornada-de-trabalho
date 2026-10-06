@@ -1,1715 +1,338 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jornada Híbrida Otimizada 2x3 — SSN/UFF</title>
+<title>Jornada Híbrida Otimizada 2×3 — SSN/UFF</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root {
-  --paper-0: #fbfaf7;
-  --paper-1: #ffffff;
-  --paper-2: #f6f5f1;
-  --paper-3: #eeece6;
-  --ink-0: #0f1115;
-  --ink-1: #2a2d33;
-  --ink-2: #55585f;
-  --ink-3: #888c94;
-  --line-1: #e8e6df;
-  --line-2: #d8d5cc;
-  --brand: #1f3a8a;
-  --brand-2: #2a4fb8;
-  --brand-3: #142766;
-  --brand-soft: #eef1f8;
-  --brand-text: #1f3a8a;
-  --accent: #b8733a;
-  --accent-2: #8a5628;
-  --accent-soft: #f7efe5;
-  --accent-text: #6b4220;
-  --ok: #2d6a4f;     --ok-bg: #e4efe8;
-  --warn: #8a5a1f;   --warn-bg: #f3ead8;
-  --danger: #8a2a2a; --danger-bg: #f3e2e2;
-  --info: #3a5a7a;   --info-bg: #e3eaf2;
-  --r-sm: 4px;
-  --r: 8px;
-  --r-lg: 14px;
-  --r-full: 999px;
-  --sh-xs: 0 1px 0 rgba(15,17,21,.04);
-  --sh-sm: 0 1px 2px rgba(15,17,21,.05), 0 2px 8px rgba(15,17,21,.04);
-  --sh-md: 0 1px 2px rgba(15,17,21,.06), 0 8px 24px rgba(15,17,21,.08);
-  --t: cubic-bezier(.2,.7,.2,1);
+:root{
+  --bg:#fbfaf7;--surface:#fff;--surface-2:#f5f3ee;--ink:#111318;--muted:#62656d;--soft:#8d9199;
+  --line:#e6e3db;--blue:#24439a;--blue-soft:#edf1fb;--orange:#b8733a;--orange-soft:#f7eee5;
+  --green:#2f6d50;--green-soft:#e7f1eb;--amber:#89611f;--amber-soft:#f4ead9;--red:#8e3434;--red-soft:#f4e3e3;
+  --shadow:0 8px 30px rgba(17,19,24,.07);--radius:12px;--ease:cubic-bezier(.2,.7,.2,1)
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper-0: #0c0d10;
-    --paper-1: #13151a;
-    --paper-2: #1a1c22;
-    --paper-3: #22252c;
-    --ink-0: #f1efe9;
-    --ink-1: #d8d5cc;
-    --ink-2: #a0a3aa;
-    --ink-3: #6e727a;
-    --line-1: #24272e;
-    --line-2: #34373f;
-    --brand: #7a95e8;
-    --brand-2: #9aaff0;
-    --brand-3: #5a78d4;
-    --brand-soft: #1a2038;
-    --brand-text: #b8ccf5;
-    --accent: #d4a070;
-    --accent-2: #b88a5a;
-    --accent-soft: #2a1f15;
-    --accent-text: #e8c9a8;
-    --ok-bg: #152a20; --ok: #7dc0a0;
-    --warn-bg: #2a1f12; --warn: #d4b06a;
-    --danger-bg: #2a1515; --danger: #e08888;
-    --info-bg: #152030; --info: #8ab0d0;
-  }
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--ink-1);
-  background: var(--paper-0);
-  -webkit-font-smoothing: antialiased;
-  transition: background .2s var(--t), color .2s var(--t);
-}
-::selection { background: var(--accent-soft); color: var(--ink-0); }
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: var(--r-full); border: 2px solid var(--paper-0); }
-::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
-:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
-button, input, select, textarea { font-family: inherit; }
-
-h1, h2, h3, h4, .serif {
-  font-family: "Fraunces", "Source Serif 4", Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--ink-0);
-  line-height: 1.2;
-}
-h1 { font-size: 26px; font-weight: 600; }
-h2 { font-size: 28px; letter-spacing: -0.025em; }
-h3 { font-size: 19px; }
-h4 { font-size: 15px; font-weight: 600; font-family: "Inter", sans-serif; letter-spacing: -0.005em; }
-p { color: var(--ink-1); }
-strong { font-weight: 600; color: var(--ink-0); }
-code, .mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.02em; font-size: 0.9em; }
-.eyebrow {
-  font-family: "Inter", sans-serif;
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-.display {
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-.print-only { display: none; }
-
-/* HEADER */
-.app-header {
-  background: var(--ink-0);
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-}
-.header-inner {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 20px 32px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.crest {
-  width: 44px; height: 44px;
-  border-radius: 10px;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.14);
-  display: grid; place-items: center;
-  font-size: 18px;
-  color: #ffffff;
-  flex-shrink: 0;
-}
-.header-titles { flex: 1; min-width: 240px; }
-.header-titles h1 {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.header-titles h1 .eyebrow-pill {
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  border-radius: 3px;
-  background: var(--accent);
-  color: #ffffff;
-  position: relative;
-  top: -1px;
-}
-.header-titles p {
-  color: rgba(238,236,230,.6);
-  font-size: 12.5px;
-  margin-top: 6px;
-  letter-spacing: 0.01em;
-}
-.header-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 14px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: pointer;
-  border: 1px solid rgba(255,255,255,.16);
-  background: transparent;
-  color: #ffffff;
-  transition: all .18s var(--t);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.btn:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.24); }
-.btn i { font-size: 11px; }
-
-.orientation-toggle {
-  display: inline-flex;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 4px;
-  overflow: hidden;
-  padding: 2px;
-  gap: 2px;
-}
-.orientation-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: transparent;
-  border: none;
-  color: rgba(238,236,230,.65);
-  font-family: "Inter", sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: all .15s var(--t);
-  white-space: nowrap;
-}
-.orientation-btn i { font-size: 11px; }
-.orientation-btn:hover { color: #ffffff; }
-.orientation-btn.active {
-  background: #ffffff;
-  color: var(--ink-0);
-  font-weight: 600;
-}
-
-/* SUBBAR */
-.subbar {
-  background: var(--paper-1);
-  border-bottom: 1px solid var(--line-1);
-}
-.subbar-inner {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 14px 32px;
-  display: flex;
-  align-items: center;
-  gap: 0;
-  flex-wrap: wrap;
-}
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  color: var(--ink-2);
-  padding: 0 24px;
-  border-right: 1px solid var(--line-1);
-}
-.meta-item:first-child { padding-left: 0; }
-.meta-item:last-child { border-right: none; }
-.meta-item i { color: var(--accent); font-size: 12px; width: 14px; }
-.meta-item .label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-right: 6px;
-}
-.meta-item .value { color: var(--ink-0); font-weight: 500; }
-
-/* LAYOUT */
-.layout {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 32px 32px 80px;
-  display: grid;
-  grid-template-columns: 256px 1fr;
-  gap: 40px;
-  align-items: start;
-}
-.sidebar { position: sticky; top: 24px; }
-.filter-block {
-  padding: 0 0 20px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--line-1);
-}
-.filter-block h4 {
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 12px;
-}
-.filter-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-.filter-pill {
-  padding: 5px 11px;
-  border-radius: var(--r-full);
-  border: 1px solid var(--line-2);
-  background: transparent;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-2);
-  cursor: pointer;
-  text-align: center;
-  transition: all .15s var(--t);
-}
-.filter-pill:hover { border-color: var(--ink-2); color: var(--ink-0); }
-.filter-pill.active {
-  background: var(--ink-0);
-  border-color: var(--ink-0);
-  color: #ffffff;
-}
-.nav-list { list-style: none; display: flex; flex-direction: column; gap: 1px; }
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 9px 12px;
-  border-radius: var(--r-sm);
-  font-size: 12.5px;
-  color: var(--ink-2);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all .15s var(--t);
-  position: relative;
-}
-.nav-item i { width: 14px; text-align: center; font-size: 11px; color: var(--ink-3); }
-.nav-item:hover { background: var(--paper-2); color: var(--ink-0); }
-.nav-item.active { background: var(--paper-2); color: var(--ink-0); font-weight: 600; }
-.nav-item.active::before {
-  content: "";
-  position: absolute;
-  left: -12px;
-  top: 8px; bottom: 8px;
-  width: 2px;
-  background: var(--brand);
-}
-.nav-item.active i { color: var(--brand); }
-.nav-badge {
-  margin-left: auto;
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 10px;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
-}
-
-.main { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
-.section { scroll-margin-top: 24px; }
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: var(--ink-0);
-  border-radius: 2px;
-  padding: 48px 52px;
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,.06);
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; right: 0;
-  width: 50%; height: 100%;
-  background: radial-gradient(ellipse at top right, rgba(184,115,58,.15), transparent 60%);
-  pointer-events: none;
-}
-.hero::after {
-  content: "2×3";
-  position: absolute;
-  right: 40px; bottom: -30px;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 240px;
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  color: rgba(255,255,255,.04);
-  pointer-events: none;
-  line-height: 1;
-}
-.hero .eyebrow { color: var(--accent); margin-bottom: 18px; display: block; }
-.hero h2 {
-  color: #ffffff;
-  font-size: 34px;
-  max-width: 720px;
-  position: relative;
-  letter-spacing: -0.03em;
-  font-weight: 500;
-}
-.hero p {
-  color: rgba(238,236,230,.75);
-  font-size: 14.5px;
-  max-width: 720px;
-  margin-top: 18px;
-  position: relative;
-  line-height: 1.65;
-}
-.hero strong { color: #ffffff; font-weight: 600; border-bottom: 1px solid rgba(184,115,58,.6); padding-bottom: 1px; }
-.hero-badges { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; position: relative; }
-.hero-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,.18);
-  padding: 6px 14px;
-  border-radius: 2px;
-  font-size: 11.5px;
-  color: rgba(255,255,255,.9);
-}
-.hero-chip i { color: var(--accent); font-size: 11px; }
-
-.kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--line-1);
-  border: 1px solid var(--line-1);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.kpi {
-  background: var(--paper-1);
-  padding: 24px 24px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: all .2s var(--t);
-  position: relative;
-}
-.kpi:hover { background: var(--paper-2); }
-.kpi-label {
-  font-size: 10.5px;
-  color: var(--ink-3);
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-.kpi-value {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 44px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: var(--ink-0);
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-.kpi-sub { font-size: 12px; color: var(--ink-2); line-height: 1.5; }
-.kpi-sub strong { color: var(--accent-2); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
-
-.panel {
-  background: var(--paper-1);
-  border: 1px solid var(--line-1);
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: var(--sh-xs);
-}
-.panel-header {
-  padding: 28px 32px 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  background: var(--paper-1);
-  border-bottom: 1px solid var(--line-1);
-  position: relative;
-}
-.panel-num {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: var(--accent);
-  line-height: 1;
-  padding-top: 4px;
-  flex-shrink: 0;
-  min-width: 36px;
-}
-.panel-icon {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  display: grid; place-items: center;
-  font-size: 14px;
-  color: var(--brand);
-  background: var(--brand-soft);
-  flex-shrink: 0;
-}
-.panel-icon.accent { color: var(--accent-2); background: var(--accent-soft); }
-.panel-title { flex: 1; min-width: 0; }
-.panel-title h3 { font-size: 22px; letter-spacing: -0.02em; margin-bottom: 6px; }
-.panel-title p { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
-.panel-body { padding: 32px; }
-
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
-thead th {
-  background: var(--paper-2);
-  color: var(--ink-3);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid var(--line-1);
-  white-space: nowrap;
-}
-tbody td {
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--line-1);
-  color: var(--ink-1);
-  vertical-align: middle;
-}
-tbody tr:last-child td { border-bottom: none; }
-tbody tr:hover { background: var(--paper-2); }
-td.num, th.num { text-align: center; font-variant-numeric: tabular-nums; }
-td.highlight { background: var(--accent-soft); color: var(--accent-text); font-weight: 600; }
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  border-radius: 2px;
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.badge .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-.badge.ok      { background: var(--ok-bg);     color: var(--ok); }
-.badge.warn    { background: var(--warn-bg);   color: var(--warn); }
-.badge.danger  { background: var(--danger-bg); color: var(--danger); }
-.badge.info    { background: var(--info-bg);   color: var(--info); }
-.badge.brand   { background: var(--brand-soft);color: var(--brand-text); }
-.badge.accent  { background: var(--accent-soft); color: var(--accent-text); }
-
-.bullet-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.bullet-list li {
-  display: flex;
-  gap: 14px;
-  font-size: 13.5px;
-  color: var(--ink-1);
-  align-items: flex-start;
-  line-height: 1.55;
-}
-.bullet-list li i {
-  color: var(--brand);
-  font-size: 11px;
-  margin-top: 5px;
-  flex-shrink: 0;
-  width: 14px;
-}
-.bullet-list li strong { color: var(--ink-0); }
-
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-1); border: 1px solid var(--line-1); border-radius: 2px; overflow: hidden; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-1); border: 1px solid var(--line-1); border-radius: 2px; overflow: hidden; }
-
-.mini-card { background: var(--paper-1); padding: 24px; position: relative; transition: all .2s var(--t); }
-.mini-card:hover { background: var(--paper-2); }
-.mini-card-num {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 14px;
-}
-.mini-card h4 {
-  font-family: "Inter", sans-serif;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--ink-0);
-  margin-bottom: 8px;
-  letter-spacing: -0.005em;
-}
-.mini-card p { font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
-.mini-card p strong { color: var(--accent-2); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
-
-.scale-week { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-.day-cell {
-  border-radius: 2px;
-  padding: 22px 16px;
-  text-align: center;
-  border: 1px solid var(--line-1);
-  background: var(--paper-1);
-  transition: all .2s var(--t);
-  position: relative;
-}
-.day-cell:hover { border-color: var(--ink-2); }
-.day-cell.presential { background: var(--ink-0); border-color: var(--ink-0); color: #ffffff; }
-.day-cell .day-name {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 10px;
-}
-.day-cell.presential .day-name { color: rgba(255,255,255,.6); }
-.day-cell .day-status {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 6px;
-  color: var(--ink-0);
-}
-.day-cell.presential .day-status { color: #ffffff; }
-.day-cell .day-note { font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em; }
-.day-cell.presential .day-note { color: rgba(255,255,255,.55); }
-.day-cell.presential::after {
-  content: "";
-  position: absolute;
-  bottom: 0; left: 20%; right: 20%;
-  height: 2px;
-  background: var(--accent);
-}
-
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  background: var(--line-1);
-  border: 1px solid var(--line-1);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-.tl-step { background: var(--paper-1); position: relative; }
-.tl-step + .tl-step { border-left: 1px solid var(--line-1); }
-.tl-head {
-  background: var(--ink-0);
-  color: var(--accent);
-  padding: 10px 16px;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-family: "Inter", sans-serif;
-}
-.tl-body { padding: 20px; }
-.tl-body h4 {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 19px;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  color: var(--ink-0);
-  margin-bottom: 8px;
-}
-.tl-body p { font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
-
-.callout {
-  border-left: 2px solid var(--accent);
-  background: var(--accent-soft);
-  padding: 18px 22px;
-  border-radius: 0 2px 2px 0;
-  font-size: 13px;
-  color: var(--ink-1);
-  line-height: 1.6;
-}
-.callout strong { color: var(--accent-text); }
-.callout.brand { border-left-color: var(--brand); background: var(--brand-soft); }
-.callout.brand strong { color: var(--brand-text); }
-.callout.danger { border-left-color: var(--danger); background: var(--danger-bg); }
-.callout.danger strong { color: var(--danger); }
-
-.app-footer {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 24px 32px;
-  border-top: 1px solid var(--line-1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 11.5px;
-  color: var(--ink-3);
-}
-.app-footer .footer-brand { display: flex; align-items: center; gap: 10px; }
-.app-footer .footer-brand i { color: var(--accent); font-size: 11px; }
-
-@media (max-width: 900px) {
-  .layout { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
-  .sidebar { position: static; }
-  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .timeline { grid-template-columns: repeat(2, 1fr); }
-  .tl-step:nth-child(3) { border-left: none; }
-  .header-inner, .subbar-inner, .app-footer { padding-left: 20px; padding-right: 20px; }
-  .meta-item { padding-left: 0; padding-right: 16px; border-right: none; }
-  .meta-item .label { display: none; }
-}
-@media (max-width: 760px) {
-  .scale-week { grid-template-columns: repeat(2, 1fr); }
-  .grid-2 { grid-template-columns: 1fr; }
-  .hero { padding: 36px 28px; }
-  .hero h2 { font-size: 24px; }
-  .panel-header { padding: 22px 24px; }
-  .panel-body { padding: 24px; }
-}
-@media (max-width: 420px) {
-  .kpi-grid { grid-template-columns: 1fr; }
-  .grid-3, .grid-4, .timeline { grid-template-columns: 1fr; }
-  .tl-step { border-left: none !important; border-top: 1px solid var(--line-1); }
-  .filter-pills { flex-direction: column; }
-  .filter-pill { width: 100%; }
-  .hero { padding: 28px 22px; }
-  .hero::after { font-size: 160px; right: 20px; bottom: -20px; }
-  .header-actions { width: 100%; }
-  .orientation-toggle, .btn { flex: 1; justify-content: center; }
-}
-
-/* ─────────────────────────────────────────────
-   PRINT — MODO APRESENTAÇÃO (SLIDES A4 PAISAGEM)
-   Cada .section vira um slide com página própria,
-   chrome editorial repetido e tipografia compacta.
-   ───────────────────────────────────────────── */
-@media print {
-  @page { size: A4 landscape; margin: 0; }
-
-  html, body { background: #ffffff !important; color: #0f1115 !important; }
-  body { font-size: 10.5px; padding: 0; }
-
-  .app-header, .subbar, .sidebar, .app-footer { display: none !important; }
-  .print-only { display: block; }
-
-  .layout { display: block; max-width: none; padding: 0; }
-  .main { gap: 0; }
-
-  /* ── Slide: uma página por seção ── */
-  .section {
-    position: relative;
-    break-before: page;
-    page-break-before: always;
-    min-height: 100vh;
-    padding: 17mm 13mm 13mm;
-    box-sizing: border-box;
-  }
-  .section.hero { break-before: avoid; page-break-before: auto; }
-
-  /* Chrome do slide (filete superior + rodapé) */
-  .section::before {
-    content: "SSN/UFF · Jornada Híbrida Otimizada 2×3";
-    position: absolute;
-    top: 7mm; left: 13mm; right: 13mm;
-    padding-bottom: 2.5mm;
-    border-bottom: 1px solid #e8e6df;
-    font-family: "Inter", sans-serif;
-    font-size: 8px; font-weight: 600;
-    letter-spacing: .24em; text-transform: uppercase;
-    color: #888c94;
-    background: none;
-    width: auto; height: auto;
-  }
-  .section::after {
-    content: "Proposta para deliberação · Colegiado · Vigência 2027.1";
-    position: absolute;
-    bottom: 6mm; left: 13mm; right: 13mm;
-    padding-top: 2.5mm;
-    border-top: 1px solid #e8e6df;
-    font-family: "Inter", sans-serif;
-    font-size: 8px; font-weight: 600;
-    letter-spacing: .24em; text-transform: uppercase;
-    color: #888c94;
-    text-align: right;
-    background: none;
-    width: auto; height: auto;
-    line-height: 1;
-  }
-
-  /* ── Capa (hero) clara ── */
-  .hero {
-    background: #ffffff !important;
-    border: none;
-    border-top: 3px solid #0f1115;
-    border-radius: 0;
-    padding: 6mm 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .hero .eyebrow { color: #8a5628; margin-bottom: 6mm; }
-  .cover-title {
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 46px;
-    font-weight: 500;
-    letter-spacing: -0.035em;
-    line-height: 1.02;
-    color: #0f1115;
-    margin-bottom: 6mm;
-    max-width: 80%;
-  }
-  .cover-title em { font-style: normal; color: #b8733a; }
-  .hero h2 { color: #0f1115 !important; font-size: 19px; max-width: 70%; }
-  .hero p { color: #2a2d33 !important; font-size: 11px; max-width: 72%; margin-top: 4mm; }
-  .hero strong { color: #0f1115 !important; border-bottom-color: #b8733a; }
-  .hero-badges { margin-top: 8mm; }
-  .hero-chip { color: #0f1115 !important; border: 1px solid #d8d5cc !important; background: transparent !important; }
-  .hero-chip i { color: #8a5628 !important; }
-
-  /* ── Cabeçalho de slide ── */
-  .panel { border: none; box-shadow: none; border-radius: 0; background: transparent; }
-  .panel-header {
-    padding: 0 0 4mm;
-    border-bottom: 2px solid #0f1115;
-    margin-bottom: 6mm;
-    background: none;
-    align-items: baseline;
-  }
-  .panel-header::after { display: none; }
-  .panel-icon { display: none; }
-  .panel-num { font-size: 26px; color: #b8733a; }
-  .panel-title h3 { font-size: 23px; color: #0f1115 !important; }
-  .panel-title p { font-size: 10.5px; color: #55585f; }
-  .panel-body { padding: 0; }
-
-  .slide-h {
-    font-size: 23px;
-    color: #0f1115 !important;
-    border-bottom: 2px solid #0f1115;
-    padding-bottom: 4mm;
-    margin-bottom: 6mm;
-  }
-
-  /* ── Grades forçadas ── */
-  .kpi-grid { grid-template-columns: repeat(4, 1fr) !important; border: 1px solid #d8d5cc; }
-  .grid-2 { grid-template-columns: 1fr 1fr !important; gap: 8mm; }
-  .grid-3 { grid-template-columns: repeat(3, 1fr) !important; border: 1px solid #d8d5cc; }
-  .grid-4 { grid-template-columns: repeat(4, 1fr) !important; border: 1px solid #d8d5cc; }
-  .timeline { grid-template-columns: repeat(4, 1fr) !important; }
-
-  /* ── Compactação tipográfica ── */
-  .kpi { padding: 5mm 6mm; }
-  .kpi-value { font-size: 32px; }
-  .kpi-label { font-size: 8.5px; }
-  .kpi-sub { font-size: 9.5px; }
-  .mini-card { padding: 5mm; }
-  .mini-card-num { font-size: 20px; margin-bottom: 3mm; }
-  .mini-card h4 { font-size: 11px; margin-bottom: 2mm; }
-  .mini-card p { font-size: 9.5px; }
-  .bullet-list { gap: 2.5mm; }
-  .bullet-list li { font-size: 10px; gap: 3mm; }
-  .callout { padding: 4mm 5mm; font-size: 10px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .tl-head { background: #0f1115 !important; color: #b8733a !important; padding: 2.5mm 4mm; font-size: 8.5px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .tl-body { padding: 4mm; }
-  .tl-body h4 { font-size: 14px; }
-  .tl-body p { font-size: 9.5px; }
-  h4[style] { font-size: 8.5px !important; letter-spacing: .2em !important; }
-
-  table { font-size: 9.5px; }
-  thead th { padding: 2.5mm 3mm; font-size: 8px; background: #f6f5f1 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  tbody td { padding: 2.8mm 3mm; }
-  td.highlight { background: #f7efe5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-  /* ── Semana proposta: 5 quadros em UMA linha ── */
-  .scale-week { grid-template-columns: repeat(5, 1fr) !important; gap: 3mm !important; }
-  .day-cell { padding: 4mm 2mm !important; }
-  .day-cell .day-name { font-size: 7.5px; margin-bottom: 2mm; letter-spacing: .18em; }
-  .day-cell .day-status { font-size: 11px; margin-bottom: 1mm; }
-  .day-cell .day-note { font-size: 8px; }
-  .day-cell.presential {
-    background: #0f1115 !important;
-    border-color: #0f1115 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  .day-cell.presential .day-status { color: #ffffff !important; }
-  .day-cell.presential .day-name { color: rgba(255,255,255,.6) !important; }
-  .day-cell.presential .day-note { color: rgba(255,255,255,.55) !important; }
-
-  /* ── Integridade de quebra ── */
-  .kpi, .mini-card, .day-cell, .tl-step, .callout, tr { break-inside: avoid; page-break-inside: avoid; }
-  h1, h2, h3, h4 { color: #0f1115 !important; }
-  a { color: #1f3a8a !important; text-decoration: none; }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.6;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.14;letter-spacing:-.025em}
+.eyebrow{font-size:10px;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--soft)}
+.wrap{max-width:1380px;margin:0 auto}
+.header{background:var(--ink);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.header-inner{max-width:1380px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.crest{width:44px;height:44px;border:1px solid rgba(255,255,255,.16);border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.06);font-size:18px}
+.header-main{flex:1;min-width:250px}.header-main h1{font-family:Inter,sans-serif;font-size:18px;font-weight:600;letter-spacing:-.01em;color:#fff}
+.header-main p{font-size:12px;color:rgba(255,255,255,.6);margin-top:4px}
+.header-tag{font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;color:#fff;background:var(--orange);padding:6px 9px;border-radius:4px}
+.header-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{cursor:pointer;border:1px solid rgba(255,255,255,.16);background:transparent;color:#fff;padding:8px 12px;border-radius:6px;font-size:11px}.btn:hover{background:rgba(255,255,255,.08)}
+.subbar{background:#fff;border-bottom:1px solid var(--line)}
+.subbar-inner{max-width:1380px;margin:0 auto;padding:10px 32px;display:flex;gap:0;flex-wrap:wrap}
+.meta{padding:0 20px;border-right:1px solid var(--line);font-size:11px;color:var(--muted)}.meta:first-child{padding-left:0}.meta:last-child{border:0}.meta strong{color:var(--ink)}.meta i{color:var(--orange);margin-right:7px}
+.layout{max-width:1380px;margin:0 auto;padding:28px 32px 70px;display:grid;grid-template-columns:230px 1fr;gap:34px}
+.sidebar{position:sticky;top:18px;align-self:start}.side-title{font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--soft);margin-bottom:10px}
+.nav{list-style:none;display:flex;flex-direction:column;gap:2px}.nav a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;text-decoration:none;color:var(--muted);font-size:12px}.nav a:hover,.nav a.active{background:var(--surface-2);color:var(--ink);font-weight:600}.nav a i{width:14px;color:var(--soft)}.nav a.active i{color:var(--blue)}
+.legend{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}.legend-row{display:flex;align-items:flex-start;gap:7px;font-size:10px;color:var(--muted);margin-bottom:8px}.dot{width:7px;height:7px;border-radius:50%;margin-top:5px;flex:0 0 auto}.dot.blue{background:var(--blue)}.dot.orange{background:var(--orange)}.dot.green{background:var(--green)}
+.main{display:flex;flex-direction:column;gap:26px;min-width:0}.section{scroll-margin-top:18px}
+.hero{background:var(--ink);color:#fff;padding:42px 46px;border-radius:14px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.hero:after{content:"2×3";position:absolute;right:24px;bottom:-55px;font:500 250px/1 Fraunces,Georgia,serif;color:rgba(255,255,255,.035);pointer-events:none}.hero .eyebrow{color:#d29b6b}.hero h2{font-size:37px;max-width:820px;margin-top:13px;color:#fff}.hero p{font-size:14px;max-width:840px;color:rgba(255,255,255,.74);margin-top:16px}.hero p strong{color:#fff}.hero-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.18);padding:7px 10px;border-radius:5px;font-size:10.5px;color:rgba(255,255,255,.9)}.chip i{color:#d29b6b}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}.kpi{background:#fff;padding:22px}.kpi-label{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--soft)}.kpi-value{font:500 42px/1 Fraunces,Georgia,serif;margin:10px 0 6px}.kpi-note{font-size:11px;color:var(--muted)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.02)}.panel-head{padding:24px 28px 18px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}.num{font:500 23px/1 Fraunces,Georgia,serif;color:var(--orange);min-width:34px}.panel-head h3{font-size:23px}.panel-head p{font-size:12px;color:var(--muted);margin-top:5px}.panel-body{padding:26px 28px}
+.callout{border-left:3px solid var(--orange);background:var(--orange-soft);padding:14px 16px;border-radius:0 8px 8px 0;font-size:12.5px;color:var(--ink)}.callout.blue{border-left-color:var(--blue);background:var(--blue-soft)}.callout.green{border-left-color:var(--green);background:var(--green-soft)}.callout.warn{border-left-color:var(--amber);background:var(--amber-soft)}.callout.red{border-left-color:var(--red);background:var(--red-soft)}.callout strong{font-weight:700}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}.card{background:#fff;padding:20px}.card h4{font-size:13px;margin-bottom:6px}.card p{font-size:11.5px;color:var(--muted)}.big-number{font:500 34px/1 Fraunces,Georgia,serif;color:var(--orange);margin-bottom:8px}
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:18px}.flow-box{border:1px solid var(--line);border-radius:10px;padding:18px}.flow-box.highlight{background:var(--blue-soft);border-color:#dbe2f8}.flow-box h4{font-family:Inter,sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft)}.flow-big{font:500 40px/1 Fraunces,Georgia,serif;margin:8px 0}.flow-box p{font-size:11.5px;color:var(--muted)}.arrow-line{display:flex;align-items:center;gap:10px;margin-top:11px;font-size:11px}.arrow-line b{color:var(--blue)}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:11.5px}th{background:var(--surface-2);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}tr:hover td{background:#fcfbf8}.center{text-align:center}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:3px 8px;border-radius:4px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}.badge.ok{background:var(--green-soft);color:var(--green)}.badge.warn{background:var(--amber-soft);color:var(--amber)}.badge.info{background:var(--blue-soft);color:var(--blue)}.badge.neutral{background:var(--surface-2);color:var(--muted)}
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.day{border:1px solid var(--line);border-radius:9px;padding:15px 10px;text-align:center;min-height:126px}.day.remote{background:#fff}.day.pres{background:var(--ink);color:#fff;border-color:var(--ink)}.day-name{font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--soft)}.pres .day-name{color:rgba(255,255,255,.54)}.day-mode{font:500 17px/1.1 Fraunces,Georgia,serif;margin-top:11px}.pres .day-mode{color:#fff}.day-note{font-size:10px;color:var(--soft);margin-top:8px}.pres .day-note{color:rgba(255,255,255,.57)}.day-who{font-size:9.5px;margin-top:12px;font-weight:600}.pres .day-who{color:#efc096}
+.scale-person{display:grid;grid-template-columns:180px repeat(5,1fr);border:1px solid var(--line);border-radius:9px;overflow:hidden}.scale-cell{padding:11px 8px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:10.5px;text-align:center}.scale-cell.head{background:var(--surface-2);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:700}.scale-cell.name{text-align:left;font-weight:700;background:#fff}.scale-cell:last-child{border-right:0}.scale-cell.pres-cell{background:var(--green-soft);color:var(--green);font-weight:700}.scale-cell.rem-cell{background:var(--blue-soft);color:var(--blue);font-weight:700}
+.activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.activity{border:1px solid var(--line);border-radius:9px;padding:14px}.activity strong{font-size:11.5px}.activity p{font-size:10.8px;color:var(--muted);margin-top:4px}.activity .tag{display:inline-block;margin-top:9px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:3px 7px;border-radius:4px;background:var(--surface-2);color:var(--muted)}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{border:1px solid var(--line);border-radius:9px;padding:15px}.metric h4{font-size:11.5px;margin-bottom:5px}.metric p{font-size:10.5px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{border:1px solid var(--line);border-radius:9px;padding:16px}.step .when{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);font-weight:700}.step h4{font:500 20px Fraunces,Georgia,serif;margin:7px 0 5px}.step p{font-size:10.8px;color:var(--muted)}
+.qna{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.q{border:1px solid var(--line);border-radius:9px;padding:15px}.q h4{font-size:11.5px;margin-bottom:5px}.q p{font-size:10.8px;color:var(--muted)}
+.footer{max-width:1380px;margin:0 auto;border-top:1px solid var(--line);padding:20px 32px 35px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--soft);font-size:10px}.footer a{color:var(--blue);text-decoration:none}
+.source-note{font-size:9.5px;color:var(--soft);margin-top:12px}.source-note a{color:var(--blue);text-decoration:none}
+.portal-spotlight{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:18px;padding:20px 22px;border:1px solid #d8e2d7;border-left:4px solid var(--green);border-radius:10px;background:linear-gradient(135deg,#f0f6f0,#fbfaf7)}.portal-spotlight-main{min-width:0}.portal-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--green);margin-bottom:4px}.portal-spotlight h3{font-size:21px;margin-bottom:5px}.portal-spotlight p{font-size:11.5px;color:var(--muted);max-width:820px}.portal-spotlight p strong{color:var(--ink)}.portal-examples{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}.portal-examples span{font-size:9.5px;color:var(--green);background:var(--green-soft);border:1px solid #d6e7da;padding:4px 7px;border-radius:4px;font-weight:600}.portal-spotlight-side{flex:0 0 170px;display:grid;grid-template-columns:1fr 1fr;gap:7px}.portal-stat{background:#fff;border:1px solid var(--line);border-radius:7px;padding:8px;text-align:center}.portal-stat strong{display:block;font:500 24px/1 Fraunces,Georgia,serif;color:var(--green)}.portal-stat span{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:700}.portal-button{grid-column:1/-1;text-align:center;background:var(--green);color:#fff;text-decoration:none;padding:9px 10px;border-radius:6px;font-size:10px;font-weight:700}.portal-button:hover{filter:brightness(.94)}
+@media(max-width:980px){.layout{grid-template-columns:1fr;padding:20px}.sidebar{position:static}.nav{display:grid;grid-template-columns:repeat(2,1fr)}.kpis{grid-template-columns:repeat(2,1fr)}.grid2,.flow,.qna{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}.hero{padding:34px}.week{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.portal-spotlight{flex-direction:column;align-items:stretch}.portal-spotlight-side{grid-template-columns:1fr 1fr;flex-basis:auto}.header-inner,.subbar-inner,.footer{padding-left:18px;padding-right:18px}.nav{grid-template-columns:1fr}.kpis,.metric-grid,.steps,.activity-grid{grid-template-columns:1fr}.hero{padding:28px 24px}.hero h2{font-size:28px}.week{grid-template-columns:1fr}.scale-person{grid-template-columns:125px repeat(5,minmax(70px,1fr));overflow:auto}.panel-head,.panel-body{padding-left:20px;padding-right:20px}}
+@media print{
+  @page{size:A4 landscape;margin:0} .portal-spotlight{padding:3.5mm 4mm;margin-top:3mm}.portal-spotlight h3{font-size:13px}.portal-spotlight p{font-size:8px}.portal-examples{margin-top:1.5mm}.portal-examples span{font-size:6.8px;padding:2px 4px}.portal-spotlight-side{flex-basis:120px}.portal-stat{padding:2mm}.portal-stat strong{font-size:17px}.portal-stat span{font-size:6.5px}.portal-button{padding:5px 6px;font-size:7px}body{background:#fff;font-size:10px}.header,.subbar,.sidebar,.footer{display:none!important}.layout{display:block;max-width:none;padding:0}.main{gap:0}.section{min-height:100vh;padding:14mm 13mm 12mm;page-break-before:always;break-before:page}.section:first-child{page-break-before:auto;break-before:auto}.hero{border-radius:0;box-shadow:none;min-height:100vh;padding:16mm 0 10mm;background:#fff;color:var(--ink);display:flex;flex-direction:column;justify-content:center}.hero:after{color:rgba(17,19,24,.035)}.hero .eyebrow{color:var(--orange)}.hero h2{font-size:37px;color:var(--ink)}.hero p{color:var(--muted);max-width:78%}.hero p strong{color:var(--ink)}.chip{color:var(--ink);border-color:var(--line)}.chip i{color:var(--orange)}.panel{border:0;border-radius:0;box-shadow:none}.panel-head{padding:0 0 5mm;border-bottom:2px solid var(--ink);margin-bottom:5mm}.panel-head h3{font-size:22px}.panel-body{padding:0}.kpi{padding:5mm}.kpi-value{font-size:31px}.kpi-label{font-size:8px}.kpi-note{font-size:8.5px}.card{padding:4mm}.card h4{font-size:10.5px}.card p{font-size:9px}.callout{padding:3.5mm 4mm;font-size:9.5px}.week{grid-template-columns:repeat(5,1fr)}.day{min-height:95px;padding:3.5mm 2mm}.day-mode{font-size:12px}.day-note,.day-who{font-size:8px}.scale-person{grid-template-columns:150px repeat(5,1fr)}table{font-size:8.5px}th{font-size:7.5px;padding:2.4mm 2.5mm}td{padding:2.6mm 2.5mm}.metric-grid{grid-template-columns:repeat(4,1fr)}.metric{padding:3.5mm}.metric h4{font-size:9.5px}.metric p{font-size:8.5px}.steps{grid-template-columns:repeat(3,1fr)}.step{padding:3.5mm}.step h4{font-size:13px}.step p,.q p{font-size:8.5px}.qna{grid-template-columns:repeat(2,1fr)}.q{padding:3.5mm}.q h4{font-size:9.5px}}
 </style>
 </head>
 <body>
-
-<header class="app-header">
+<header class="header">
   <div class="header-inner">
     <div class="crest"><i class="fa-solid fa-building-columns"></i></div>
-    <div class="header-titles">
-      <h1>
-        Jornada Híbrida Otimizada
-        <span class="eyebrow-pill">SSN / UFF</span>
-      </h1>
-      <p>Proposta de reestruturação operacional · Departamento de Serviço Social de Niterói</p>
+    <div class="header-main">
+      <h1>Jornada Híbrida Otimizada · SSN / UFF</h1>
+      <p>Proposta de reestruturação operacional · Departamento de Serviço Social de Niterói · Escola de Serviço Social</p>
     </div>
+    <span class="header-tag">Proposta 2×3</span>
     <div class="header-actions">
-      <div class="orientation-toggle" role="group" aria-label="Orientação do PDF">
-        <button type="button" class="orientation-btn active" data-orient="landscape" aria-pressed="true">
-          <i class="fa-solid fa-arrows-left-right"></i> Paisagem
-        </button>
-        <button type="button" class="orientation-btn" data-orient="portrait" aria-pressed="false">
-          <i class="fa-solid fa-arrows-up-down"></i> Retrato
-        </button>
-      </div>
-      <button class="btn" onclick="downloadPDF()"><i class="fa-solid fa-file-pdf"></i> Baixar PDF</button>
-      <button class="btn" onclick="exportDoc()"><i class="fa-solid fa-file-word"></i> .doc</button>
+      <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimir / PDF</button>
     </div>
   </div>
 </header>
-
-<div class="subbar">
-  <div class="subbar-inner">
-    <div class="meta-item">
-      <i class="fa-solid fa-calendar"></i>
-      <span class="label">Vigência</span>
-      <span class="value">2027.1</span>
-    </div>
-    <div class="meta-item">
-      <i class="fa-solid fa-clock"></i>
-      <span class="label">Jornada</span>
-      <span class="value">13h – 19h</span>
-    </div>
-    <div class="meta-item">
-      <i class="fa-solid fa-users-rectangle"></i>
-      <span class="label">Apresentação</span>
-      <span class="value">Colegiado</span>
-    </div>
-    <div class="meta-item">
-      <i class="fa-solid fa-layer-group"></i>
-      <span class="label">Modelo</span>
-      <span class="value">2×3 · Híbrido</span>
-    </div>
-  </div>
-</div>
+<div class="subbar"><div class="subbar-inner">
+  <div class="meta"><i class="fa-solid fa-calendar"></i><strong>Vigência proposta:</strong> 2027.1</div>
+  <div class="meta"><i class="fa-solid fa-clock"></i><strong>Jornada:</strong> 13h–19h</div>
+  <div class="meta"><i class="fa-solid fa-users"></i><strong>Equipe:</strong> Luiz + Patrícia</div>
+  <div class="meta"><i class="fa-solid fa-door-open"></i><strong>Atendimento físico:</strong> Ter–Qua–Qui</div>
+</div></div>
 
 <div class="layout">
+<aside class="sidebar">
+  <div class="side-title">Navegação</div>
+  <ul class="nav">
+    <li><a class="active" href="#decisao"><i class="fa-solid fa-bullseye"></i> Visão geral</a></li>
+    <li><a href="#diagnostico"><i class="fa-solid fa-magnifying-glass-chart"></i> Diagnóstico</a></li>
+    <li><a href="#npgd"><i class="fa-solid fa-scale-balanced"></i> NPGD-UFF</a></li>
+    <li><a href="#precedentes"><i class="fa-solid fa-sitemap"></i> Precedentes</a></li>
+    <li><a href="#escala"><i class="fa-solid fa-calendar-week"></i> Escala 2×3</a></li>
+    <li><a href="#atividades"><i class="fa-solid fa-layer-group"></i> Atividades</a></li>
+    <li><a href="#servicos"><i class="fa-solid fa-handshake"></i> Serviço ao público</a></li>
+    <li><a href="#piloto"><i class="fa-solid fa-flask"></i> Piloto 90 dias</a></li>
+    <li><a href="#riscos"><i class="fa-solid fa-shield-halved"></i> Riscos e respostas</a></li>
+    <li><a href="#comunicacao"><i class="fa-solid fa-bullhorn"></i> Comunicação</a></li>
+    <li><a href="#deliberacao"><i class="fa-solid fa-check-double"></i> Síntese</a></li>
+  </ul>
+  <div class="legend">
+    <div class="side-title">Leitura rápida</div>
+    <div class="legend-row"><span class="dot blue"></span><span>Trabalho remoto / processamento sistêmico</span></div>
+    <div class="legend-row"><span class="dot orange"></span><span>Atendimento, decisão e pontos críticos</span></div>
+    <div class="legend-row"><span class="dot green"></span><span>Presença física e cobertura do serviço</span></div>
+  </div>
+</aside>
 
-  <aside class="sidebar">
-    <div class="filter-block">
-      <h4>Visão</h4>
-      <div class="filter-pills">
-        <button class="filter-pill active" data-filter="all">Tudo</button>
-        <button class="filter-pill" data-filter="diag">Diagnóstico</button>
-        <button class="filter-pill" data-filter="prop">Proposta</button>
-        <button class="filter-pill" data-filter="norm">Norma</button>
-      </div>
+<main class="main">
+
+<section class="section hero" id="decisao">
+  <span class="eyebrow">Painel para discussão</span>
+  <h2>Menos deslocamento por servidor. <span style="color:#d29b6b">Três dias de atendimento preservados.</span></h2>
+  <p>O desenho organiza a jornada individual em <strong>2 dias presenciais + 3 remotos</strong>, enquanto o SSN mantém <strong>atendimento presencial de terça a quinta</strong> e atendimento digital durante os cinco dias úteis. O desenho é: <strong>Luiz — terça/quarta</strong> e <strong>Patrícia — quarta/quinta</strong>. A quarta-feira funciona como dia de presença conjunta.</p>
+  <div class="hero-strip">
+    <span class="chip"><i class="fa-solid fa-user"></i> 2×3 por servidor</span>
+    <span class="chip"><i class="fa-solid fa-door-open"></i> 3 dias de atendimento físico</span>
+    <span class="chip"><i class="fa-solid fa-laptop"></i> 5 dias com canal remoto</span>
+    <span class="chip"><i class="fa-solid fa-people-group"></i> 1 dia de equipe completa</span>
+  </div>
+</section>
+
+<section class="section" id="diagnostico">
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-label">Atividades mapeadas</div><div class="kpi-value">61</div><div class="kpi-note">Base operacional já utilizada pelo SSN</div></div>
+    <div class="kpi"><div class="kpi-label">Estritamente presenciais</div><div class="kpi-value">6</div><div class="kpi-note">9,8% do conjunto mapeado</div></div>
+    <div class="kpi"><div class="kpi-label">Presencial por servidor</div><div class="kpi-value">2</div><div class="kpi-note">de 3 dias na escala proposta</div></div>
+    <div class="kpi"><div class="kpi-label">Atendimento físico</div><div class="kpi-value">3</div><div class="kpi-note">terça · quarta · quinta</div></div>
+  </div>
+
+  <div class="portal-spotlight">
+    <div class="portal-spotlight-main">
+      <div class="portal-kicker">Principal ativo digital do SSN</div>
+      <h3>Portal de Soluções SSN-UFF</h3>
+      <p>Um hub central que reúne <strong>27 itens ativos</strong> entre planilhas, sistemas, rotinas e dashboards interativas. O portal simplifica a execução, centraliza processos e reduz a dependência de e-mails internos — infraestrutura que sustenta uma operação mais remota e orientada por entregas.</p>
+      <div class="portal-examples"><span>Acompanhamento Funcional</span><span>Acompanhamento SEI SSN</span><span>SiSAd · Avaliações</span><span>Preparação para Plenárias</span></div>
     </div>
-    <ul class="nav-list">
-      <li><a class="nav-item active" href="#contexto"><i class="fa-solid fa-chart-simple"></i> Contexto <span class="nav-badge">01</span></a></li>
-      <li><a class="nav-item" href="#diagnostico"><i class="fa-solid fa-magnifying-glass-chart"></i> Diagnóstico <span class="nav-badge">02</span></a></li>
-      <li><a class="nav-item" href="#prova"><i class="fa-solid fa-flask"></i> Prova de conceito <span class="nav-badge">03</span></a></li>
-      <li><a class="nav-item" href="#portal"><i class="fa-solid fa-cubes"></i> Portal de Soluções <span class="nav-badge">04</span></a></li>
-      <li><a class="nav-item" href="#norma"><i class="fa-solid fa-scale-balanced"></i> Base normativa <span class="nav-badge">05</span></a></li>
-      <li><a class="nav-item" href="#precedentes"><i class="fa-solid fa-sitemap"></i> Precedentes UFF <span class="nav-badge">06</span></a></li>
-      <li><a class="nav-item" href="#escala"><i class="fa-solid fa-table-cells"></i> Escala 2×3 <span class="nav-badge">07</span></a></li>
-      <li><a class="nav-item" href="#diarios"><i class="fa-solid fa-print"></i> Diários e arquivo <span class="nav-badge">08</span></a></li>
-      <li><a class="nav-item" href="#comparativo"><i class="fa-solid fa-arrows-left-right"></i> Comparativo <span class="nav-badge">09</span></a></li>
-      <li><a class="nav-item" href="#comunicacao"><i class="fa-solid fa-bullhorn"></i> Comunicação <span class="nav-badge">10</span></a></li>
-      <li><a class="nav-item" href="#indicadores"><i class="fa-solid fa-gauge-high"></i> Indicadores <span class="nav-badge">11</span></a></li>
-      <li><a class="nav-item" href="#riscos"><i class="fa-solid fa-shield-halved"></i> Riscos <span class="nav-badge">12</span></a></li>
-      <li><a class="nav-item" href="#implantacao"><i class="fa-solid fa-road"></i> Implantação <span class="nav-badge">13</span></a></li>
-      <li><a class="nav-item" href="#conclusao"><i class="fa-solid fa-flag-checkered"></i> Conclusão <span class="nav-badge">14</span></a></li>
-    </ul>
-  </aside>
+    <div class="portal-spotlight-side">
+      <div class="portal-stat"><strong>27</strong><span>itens ativos</span></div>
+      <div class="portal-stat"><strong>3</strong><span>áreas</span></div>
+      <a class="portal-button" href="https://ssness-uff.github.io/Hub-de-Planilhas/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir portal</a>
+    </div>
+  </div>
 
-  <main class="main">
+  <div class="panel" style="margin-top:20px">
+    <div class="panel-head"><div class="num">01</div><div><h3>A pergunta não é “presencial ou remoto?”</h3><p>É: quanto de presencialidade o serviço realmente precisa?</p></div></div>
+    <div class="panel-body">
+      <div class="flow">
+        <div class="flow-box"><h4>Modelo atual</h4><div class="flow-big">3 dias presenciais / servidor</div><p>Presença distribuída ao longo da semana, inclusive em dias destinados a rotinas predominantemente sistêmicas.</p><div class="arrow-line"><i class="fa-solid fa-arrow-right"></i><b>deslocamento + interrupções</b></div></div>
+        <div class="flow-box highlight"><h4>Modelo apresentado</h4><div class="flow-big">2 dias presenciais / servidor</div><p>Presença concentrada nos dias de atendimento e um dia de equipe completa, com segunda e sexta dedicadas ao trabalho remoto focado.</p><div class="arrow-line"><i class="fa-solid fa-arrow-right"></i><b>cobertura + foco + previsibilidade</b></div></div>
+      </div>
+      <div class="grid3" style="margin-top:18px">
+        <div class="card"><div class="big-number">⅓</div><h4>Menos deslocamento individual</h4><p>De 3 para 2 dias presenciais por servidor. A jornada semanal não diminui; muda o local de execução.</p></div>
+        <div class="card"><div class="big-number">3 dias</div><h4>Presença física da unidade</h4><p>Terça, quarta e quinta. O serviço não precisa fechar dois dias da semana para adotar o 2×3 individual.</p></div>
+        <div class="card"><div class="big-number">1 dia</div><h4>Equipe completa</h4><p>Quarta-feira concentra alinhamento, reuniões, demandas complexas, arquivo e integração.</p></div>
+      </div>
+      <div class="callout blue" style="margin-top:18px"><strong>Tese central:</strong> a proposta reorganiza a presença conforme a necessidade do serviço. Não reduz jornada, entregas ou responsabilidade; reduz a exposição a deslocamentos em dias que podem ser executados remotamente.</div>
+      <div class="source-note">Os números de 61 atividades, 6 atividades estritamente presenciais e 9,8% vêm da base da proposta atual do SSN e devem ser apresentados como <strong>dados operacionais internos informados pelo setor</strong>, não como auditoria externa. <a href="https://ssness-uff.github.io/Jornada-de-trabalho/" target="_blank" rel="noopener">Painel original do SSN</a>.</div>
+    </div>
+  </div>
+</section>
 
-    <section class="section hero" id="contexto">
-      <span class="eyebrow">Proposta operacional · Escala 2×3</span>
-      <div class="cover-title print-only" aria-hidden="true">Jornada Híbrida<br>Otimizada <em>2×3</em></div>
-      <h2>Uma mudança de escala baseada em demanda, entregas e dados.</h2>
-      <p>O SSN mapeou <strong>61 atividades</strong>, das quais apenas <strong>6 são estritamente presenciais</strong> (9,8%). Mais de <strong>90% da tramitação é virtual</strong>, sustentada por <strong>27 soluções digitais</strong> já operantes no Portal de Soluções. A proposta 2×3 concentra a presença onde ela agrega valor e libera dois dias para processamento sistêmico focado.</p>
-      <div class="hero-badges">
-        <span class="hero-chip"><i class="fa-solid fa-file-lines"></i> 61 atividades mapeadas</span>
-        <span class="hero-chip"><i class="fa-solid fa-building"></i> 6 presenciais (9,8%)</span>
-        <span class="hero-chip"><i class="fa-solid fa-laptop-code"></i> &gt; 90% digital</span>
-        <span class="hero-chip"><i class="fa-solid fa-flask"></i> Já testado em férias acadêmicas</span>
-      </div>
-    </section>
+<section class="section panel" id="npgd">
+  <div class="panel-head"><div class="num">02</div><div><h3>O NPGD-UFF já admite o desenho híbrido</h3><p>O debate passa a ser sobre a melhor distribuição da presencialidade para a unidade</p></div></div>
+  <div class="panel-body">
+    <div class="grid2">
+      <div class="card" style="border:1px solid var(--line);border-radius:9px"><div class="big-number">2.218</div><h4>servidores participantes</h4><p>Dados de dezembro de 2025 no Relatório Gerencial do NPGD/UFF.</p></div>
+      <div class="card" style="border:1px solid var(--line);border-radius:9px"><div class="big-number">1.658</div><h4>em teletrabalho parcial</h4><p>Modalidade predominante entre os participantes; aproximadamente 74,8% do total de participantes nesse recorte.</p></div>
+    </div>
+    <div class="callout blue" style="margin-top:18px"><strong>Regra institucional relevante:</strong> a UFF define o teletrabalho parcial como a combinação de dias remotos com dias presenciais conforme as necessidades da unidade e do servidor. A própria UFF informa que a escala da equipe é definida pela chefia imediata em integração com os participantes.</div>
+    <div class="grid3" style="margin-top:18px">
+      <div class="card"><h4><i class="fa-solid fa-bullseye" style="color:var(--orange);margin-right:7px"></i>Interesse da administração</h4><p>O desenho precisa preservar a finalidade e a capacidade de atendimento da unidade.</p></div>
+      <div class="card"><h4><i class="fa-solid fa-chart-line" style="color:var(--orange);margin-right:7px"></i>Entregas e resultados</h4><p>O NPGD acompanha o trabalho por entregas e resultados, com plano de trabalho e registro institucional.</p></div>
+      <div class="card"><h4><i class="fa-solid fa-users" style="color:var(--orange);margin-right:7px"></i>Cobertura</h4><p>O SSN propõe três dias físicos de atendimento, evitando que a mudança recaia sobre quem precisa comparecer presencialmente.</p></div>
+    </div>
+    <div class="source-note">Fontes oficiais: <a href="https://www.uff.br/faq/quais-sao-as-modalidades-de-trabalho-no-npgd/" target="_blank" rel="noopener">FAQ — modalidades do NPGD</a> · <a href="https://www.uff.br/faq/existe-alguma-orientacao-para-as-chefias-definirem-os-dias-minimos-de-trabalho-presencial-dos-servidores-que-aderirem-ao-programa-de-gestao-na-modalidade-teletrabalho-parcial/" target="_blank" rel="noopener">FAQ — escala definida pela chefia</a> · <a href="https://www.uff.br/wp-content/uploads/2026/04/Relatorio_CNPGD_2025_assinado.pdf" target="_blank" rel="noopener">Relatório Gerencial 2025</a>.</div>
+  </div>
+</section>
 
-    <section class="section">
-      <h3 class="slide-h print-only">Retrato operacional em quatro números</h3>
-      <div class="kpi-grid">
-        <div class="kpi">
-          <div class="kpi-label">Atividades mapeadas</div>
-          <div class="kpi-value display">61</div>
-          <div class="kpi-sub">Diárias, mensais, semestrais e anuais</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Atividades presenciais</div>
-          <div class="kpi-value display">6</div>
-          <div class="kpi-sub"><strong>9,8%</strong> do total — abaixo de 10%</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Tramitação virtual</div>
-          <div class="kpi-value display">&gt;90%</div>
-          <div class="kpi-sub">SEI, SCDP, Drive, IDUFF, formulários</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Consultas físicas</div>
-          <div class="kpi-value display">4</div>
-          <div class="kpi-sub">Em 2,5 anos — exceção residual</div>
-        </div>
-      </div>
-    </section>
+<section class="section panel" id="precedentes">
+  <div class="panel-head"><div class="num">03</div><div><h3>Precedentes publicados pela própria UFF</h3><p>Precedentes de presencialidade publicados pela própria UFF</p></div></div>
+  <div class="panel-body">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Unidade</th><th>Atendimento presencial</th><th>Atendimento remoto</th><th>Leitura para o SSN</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PPG em Política Social — ESS/UFF</strong></td><td>Seg–Qua · 9h–21h</td><td>Qui–Sex · e-mail</td><td>Exemplo claro de <strong>3×2</strong> publicizado por dia.</td><td><span class="badge ok">3×2 confirmado</span></td></tr>
+          <tr><td><strong>Coordenação Acadêmica de Engenharia de Agronegócios — VGA/UFF</strong></td><td>Ter–Qua–Sex</td><td>Seg–Qui</td><td>Exemplo claro de escala semanal com dias remotos e presenciais explícitos.</td><td><span class="badge ok">3×2 confirmado</span></td></tr>
+          <tr><td><strong>PPGD/UFF — Direito</strong></td><td>Ter · 14h–17h, entregas e retiradas</td><td>Todas as demandas por e-mail</td><td>Mostra que a presença física pode ser concentrada em janela mínima quando a natureza do serviço permite.</td><td><span class="badge info">1 dia físico</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:18px"><strong>Panorama institucional:</strong> a UFF já trabalha com diferentes níveis de presencialidade, inclusive escalas explicitamente distribuídas por dia. O desenho do SSN se insere nesse universo de soluções organizacionais, ajustado à demanda e às características da unidade.</div>
+    <div class="source-note">Fontes: <a href="https://politicasocial.uff.br/2024/02/" target="_blank" rel="noopener">PPG Política Social</a> · <a href="https://vea.uff.br/contato-coordenacao/" target="_blank" rel="noopener">VGA/VEI</a> · <a href="https://ppgd.uff.br/" target="_blank" rel="noopener">PPGD/UFF</a>.</div>
+  </div>
+</section>
 
-    <section class="section panel" id="diagnostico">
-      <div class="panel-header">
-        <div class="panel-num">§02</div>
-        <div class="panel-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-        <div class="panel-title">
-          <h3>Por que revisar a distribuição da presencialidade?</h3>
-          <p>Seis vetores operacionais que sustentam a proposta</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="grid-3">
-          <div class="mini-card">
-            <div class="mini-card-num">01</div>
-            <h4>Deslocamento</h4>
-            <p>Presença diária gera deslocamento mesmo quando a atividade é sistêmica. Redução de <strong>1/3</strong> no deslocamento por trabalhador.</p>
-          </div>
-          <div class="mini-card">
-            <div class="mini-card-num">02</div>
-            <h4>Interrupções</h4>
-            <p>Tarefas de análise e processamento são fragmentadas por demandas pontuais de balcão.</p>
-          </div>
-          <div class="mini-card">
-            <div class="mini-card-num">03</div>
-            <h4>Baixa demanda</h4>
-            <p>Dias com pouca procura presencial não necessariamente aumentam entregas.</p>
-          </div>
-          <div class="mini-card">
-            <div class="mini-card-num">04</div>
-            <h4>Concentração</h4>
-            <p>Demandas presenciais agrupadas nos dias de maior circulação docente, com <strong>produtividade aumentada em 40%</strong>.</p>
-          </div>
-          <div class="mini-card">
-            <div class="mini-card-num">05</div>
-            <h4>Digitalização</h4>
-            <p>SEI, Drive, planilhas e dashboards já sustentam <strong>mais de 90%</strong> da rotina.</p>
-          </div>
-          <div class="mini-card">
-            <div class="mini-card-num">06</div>
-            <h4>Gestão por entregas</h4>
-            <p>O NPGD-UFF estrutura o acompanhamento pela efetividade e qualidade das entregas.</p>
-          </div>
-        </div>
+<section class="section panel" id="escala">
+  <div class="panel-head"><div class="num">04</div><div><h3>A escala proposta para Luiz e Patrícia</h3><p>O setor fica aberto presencialmente três dias; cada servidor cumpre dois dias presenciais</p></div></div>
+  <div class="panel-body">
+    <div class="week">
+      <div class="day remote"><div class="day-name">Segunda</div><div class="day-mode">REMOTO</div><div class="day-note">Processamento sistêmico</div><div class="day-who">Luiz + Patrícia</div></div>
+      <div class="day pres"><div class="day-name">Terça</div><div class="day-mode">PRESENCIAL</div><div class="day-note">Atendimento</div><div class="day-who">Luiz</div></div>
+      <div class="day pres"><div class="day-name">Quarta</div><div class="day-mode">PRESENCIAL</div><div class="day-note">Equipe completa</div><div class="day-who">Luiz + Patrícia</div></div>
+      <div class="day pres"><div class="day-name">Quinta</div><div class="day-mode">PRESENCIAL</div><div class="day-note">Atendimento</div><div class="day-who">Patrícia</div></div>
+      <div class="day remote"><div class="day-name">Sexta</div><div class="day-mode">REMOTO</div><div class="day-note">Fechamento</div><div class="day-who">Luiz + Patrícia</div></div>
+    </div>
+    <div class="scale-person" style="margin-top:18px;min-width:720px">
+      <div class="scale-cell head">Servidor / dia</div><div class="scale-cell head">Seg</div><div class="scale-cell head">Ter</div><div class="scale-cell head">Qua</div><div class="scale-cell head">Qui</div><div class="scale-cell head">Sex</div>
+      <div class="scale-cell name">Luiz</div><div class="scale-cell rem-cell">Remoto</div><div class="scale-cell pres-cell">Presencial</div><div class="scale-cell pres-cell">Presencial</div><div class="scale-cell rem-cell">Remoto</div><div class="scale-cell rem-cell">Remoto</div>
+      <div class="scale-cell name">Patrícia</div><div class="scale-cell rem-cell">Remoto</div><div class="scale-cell rem-cell">Remoto</div><div class="scale-cell pres-cell">Presencial</div><div class="scale-cell pres-cell">Presencial</div><div class="scale-cell rem-cell">Remoto</div>
+      <div class="scale-cell name">SSN · atendimento</div><div class="scale-cell rem-cell">Digital</div><div class="scale-cell pres-cell">Aberto</div><div class="scale-cell pres-cell">Aberto</div><div class="scale-cell pres-cell">Aberto</div><div class="scale-cell rem-cell">Digital</div>
+    </div>
+    <div class="callout green" style="margin-top:18px"><strong>Ponto-chave:</strong> a unidade permanece fisicamente aberta <strong>3 dias</strong> sem exigir 3 dias presenciais de cada servidor. A quarta-feira é deliberadamente o dia de presença conjunta para reduzir riscos de fragmentação.</div>
+    <div class="grid3" style="margin-top:18px">
+      <div class="card"><h4>Segunda · concentração</h4><p>SEI, planilhas, documentos, respostas, organização de pendências e planejamento semanal.</p></div>
+      <div class="card"><h4>Quarta · integração</h4><p>Reuniões, decisões, demandas complexas, atualização conjunta e transferência de conhecimento.</p></div>
+      <div class="card"><h4>Sexta · fechamento</h4><p>Consolidação, relatórios, backups, conferência de pendências e preparação da semana seguinte.</p></div>
+    </div>
+  </div>
+</section>
 
-        <div class="callout brand" style="margin-top:28px">
-          <strong>Premissa operacional:</strong> presencialidade deve responder à natureza da demanda — não ser um fim em si mesma. Hoje a atividade de atendimento está <strong>menos concentrada e difusa</strong>; a proposta a focaliza nos dias de maior utilidade.
-        </div>
+<section class="section panel" id="atividades">
+  <div class="panel-head"><div class="num">05</div><div><h3>O que realmente precisa de presença física?</h3><p>Concentrar a presença nas tarefas que ganham valor com acesso ao espaço, aos documentos ou ao contato direto</p></div></div>
+  <div class="panel-body">
+    <div class="activity-grid">
+      <div class="activity"><strong>Impressão / entrega de diários docentes</strong><p>Permanece disponível na janela presencial e pode ser solicitada previamente por canal remoto.</p><span class="tag">Presencial Ter–Qua–Qui</span></div>
+      <div class="activity"><strong>Consulta ao arquivo físico</strong><p>Atendida nos dias presenciais; consultas excepcionais podem ser organizadas previamente.</p><span class="tag">Presencial / agendamento</span></div>
+      <div class="activity"><strong>Entregas e retiradas de documentos</strong><p>Concentrar a circulação física em três dias torna o atendimento previsível para docentes.</p><span class="tag">Presencial Ter–Qua–Qui</span></div>
+      <div class="activity"><strong>Atendimentos que exigem interação imediata</strong><p>Reuniões ou orientações que realmente se beneficiem da presença são priorizadas no balcão.</p><span class="tag">Presencial conforme demanda</span></div>
+      <div class="activity"><strong>SEI, formulários, planilhas e controles</strong><p>Não dependem do espaço físico; podem ser executados e registrados remotamente.</p><span class="tag">Remoto 5 dias</span></div>
+      <div class="activity"><strong>Planejamento, relatórios e acompanhamento</strong><p>Atividades de concentração e análise devem aproveitar segunda e sexta, sem interrupções presenciais.</p><span class="tag">Remoto focado</span></div>
+    </div>
+    <div class="callout blue" style="margin-top:18px"><strong>Regra operacional:</strong> o que pode ser concluído integralmente por meio digital deve seguir o fluxo remoto; o presencial fica reservado ao que realmente exige espaço, documento físico ou interação direta.</div>
+  </div>
+</section>
 
-        <div class="callout danger" style="margin-top:14px">
-          <strong>Ponto de atenção — excepcionalidade:</strong> em situações excepcionais (concursos, bancas, seleções), a equipe já permanece <strong>mais de 13 horas</strong> na UFF. A escala 2×3 não elimina essa realidade — ela apenas garante que, nos dias comuns, o deslocamento seja proporcional à demanda real.
-        </div>
-      </div>
-    </section>
+<section class="section panel" id="servicos">
+  <div class="panel-head"><div class="num">06</div><div><h3>O serviço ao público não é reduzido; ele fica mais previsível</h3><p>Atendimento presencial em três dias + canal remoto nos cinco dias úteis</p></div></div>
+  <div class="panel-body">
+    <div class="grid3">
+      <div class="card"><div class="big-number">3</div><h4>dias de presença física</h4><p>Terça, quarta e quinta, com cobertura definida e informação pública no site.</p></div>
+      <div class="card"><div class="big-number">5</div><h4>dias de atendimento digital</h4><p>Segunda a sexta por e-mail e ferramentas institucionais, conforme o tipo de demanda.</p></div>
+      <div class="card"><div class="big-number">1</div><h4>dia de equipe completa</h4><p>Quarta-feira como ponto de encontro para tarefas que exigem coordenação.</p></div>
+    </div>
+    <div class="table-wrap" style="margin-top:18px"><table>
+      <thead><tr><th>Para o público</th><th>Como funciona</th><th>Garantia</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Quero resolver por e-mail</strong></td><td>Canal remoto disponível de segunda a sexta</td><td><span class="badge info">5 dias digitais</span></td></tr>
+        <tr><td><strong>Preciso entregar/retirar algo</strong></td><td>Terça a quinta; pedidos podem ser antecipados remotamente</td><td><span class="badge ok">3 dias físicos</span></td></tr>
+        <tr><td><strong>Preciso de atendimento excepcional</strong></td><td>Organização e agendamento conforme necessidade</td><td><span class="badge warn">Contingência</span></td></tr>
+        <tr><td><strong>Preciso saber quando ir à UFF</strong></td><td>Escala publicada na página da unidade e no aviso físico da secretaria</td><td><span class="badge info">Previsibilidade</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout" style="margin-top:18px"><strong>Escala de atendimento:</strong> SSN aberto presencialmente de terça a quinta, atendimento remoto de segunda a sexta, equipe completa às quartas-feiras para reuniões de alinhamento e execução.</div>
+  </div>
+</section>
 
-    <section class="section panel" id="prova">
-      <div class="panel-header">
-        <div class="panel-num">§03</div>
-        <div class="panel-icon accent"><i class="fa-solid fa-flask"></i></div>
-        <div class="panel-title">
-          <h3>Prova de conceito: o modelo 2×3 já opera no SSN</h3>
-          <p>O Departamento já funciona nessa lógica durante as férias acadêmicas</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="callout brand" style="margin-bottom:24px">
-          <strong>Fato verificado:</strong> nos períodos de férias dos alunos — <strong>janeiro ao início de março</strong> e <strong>férias do meio do ano</strong> — o SSN já opera em regime <strong>2×3</strong>, com <strong>atendimento presencial às terças e quintas</strong>. Não houve prejuízo às entregas nem à qualidade do serviço prestado.
-        </div>
-        <div class="grid-3">
-          <div class="mini-card">
-            <h4>Modelo já testado</h4>
-            <p>Não é uma aposta teórica. É um regime <strong>já operado</strong> pelo Departamento em dois períodos anuais, com resultados conhecidos.</p>
-          </div>
-          <div class="mini-card">
-            <h4>Entregas mantidas</h4>
-            <p>Durante as férias, as rotinas administrativas permanecem — SEI, DTSs, declarações, planejamento — e <strong>são cumpridas</strong>.</p>
-          </div>
-          <div class="mini-card">
-            <h4>Sem ruptura</h4>
-            <p>A transição para o regime permanente apenas <strong>estende ao semestre letivo</strong> o que já se pratica nos períodos de recesso.</p>
-          </div>
-        </div>
-        <div class="callout" style="margin-top:24px">
-          <strong>Argumento central para o Colegiado:</strong> a proposta não introduz um modelo desconhecido. Ela <strong>institucionaliza</strong> o que o SSN já faz com sucesso todos os anos — e que pode ser replicado com os mesmos resultados no restante do calendário acadêmico.
-        </div>
-      </div>
-    </section>
+<section class="section panel" id="piloto">
+  <div class="panel-head"><div class="num">07</div><div><h3>Piloto de 90 dias: implantar, medir, ajustar</h3><p>A proposta deve ser testada como hipótese operacional, e não como resultado já garantido</p></div></div>
+  <div class="panel-body">
+    <div class="steps">
+      <div class="step"><div class="when">30 dias</div><h4>Checagem inicial</h4><p>Verificar cobertura, atendimento, pendências e necessidade de exceções. Corrigir o que for operacional.</p></div>
+      <div class="step"><div class="when">60 dias</div><h4>Ajuste fino</h4><p>Comparar volume e tempo de resposta, revisar distribuição de tarefas e reforçar comunicação.</p></div>
+      <div class="step"><div class="when">90 dias</div><h4>Decisão</h4><p>Apresentar balanço ao Colegiado e decidir pela continuidade, ajuste ou revisão do arranjo.</p></div>
+    </div>
+    <div class="metric-grid" style="margin-top:18px">
+      <div class="metric"><h4>Entregas no prazo</h4><p>Percentual de atividades concluídas dentro dos prazos pactuados.</p></div>
+      <div class="metric"><h4>Tempo de primeira resposta</h4><p>Quanto tempo o público espera até receber retorno inicial.</p></div>
+      <div class="metric"><h4>Demandas presenciais</h4><p>Volume e distribuição por terça, quarta e quinta.</p></div>
+      <div class="metric"><h4>Backlog / pendências</h4><p>Quantidade de demandas em aberto no fim da semana.</p></div>
+      <div class="metric"><h4>SEI e processos</h4><p>Acompanhamento das tarefas e prazos relevantes.</p></div>
+      <div class="metric"><h4>Satisfação dos docentes</h4><p>Pesquisa curta sobre clareza dos horários e qualidade do atendimento.</p></div>
+      <div class="metric"><h4>Exceções</h4><p>Quantos atendimentos exigiram reprogramação ou presença fora da janela.</p></div>
+      <div class="metric"><h4>Equilíbrio da equipe</h4><p>Percepção e registro de sobrecarga, interrupções e necessidade de ajustes.</p></div>
+    </div>
+    
+  </div>
+</section>
 
-    <section class="section panel" id="portal">
-      <div class="panel-header">
-        <div class="panel-num">§04</div>
-        <div class="panel-icon accent"><i class="fa-solid fa-cubes"></i></div>
-        <div class="panel-title">
-          <h3>O Portal de Soluções já sustenta a operação digital</h3>
-          <p>27 itens distribuídos entre Assuntos Docentes, Gestão e Ferramentas e Soluções UFF</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="grid-4" style="margin-bottom:28px">
-          <div class="mini-card"><h4>Formulário de Planejamento</h4><p>Coleta intenções, horários, orientações e licenças</p></div>
-          <div class="mini-card"><h4>Mapa de Produção</h4><p>Consolida respostas em tabelas por tema</p></div>
-          <div class="mini-card"><h4>Planejamento SSN/ESS</h4><p>Grade, ensalamento e afastamentos</p></div>
-          <div class="mini-card"><h4>Controle de Ementas</h4><p>Entrega por turma, docente e semestre</p></div>
-          <div class="mini-card"><h4>Preparação para Plenárias</h4><p>Pauta organizada e leitura prévia</p></div>
-          <div class="mini-card"><h4>Presenças em Plenária</h4><p>Quórum em tempo real</p></div>
-          <div class="mini-card"><h4>DTSs e Comissões</h4><p>Atos administrativos formalizados</p></div>
-          <div class="mini-card"><h4>Acompanhamento SEI</h4><p>Status, prazos e histórico</p></div>
-          <div class="mini-card"><h4>Acompanhamento Funcional</h4><p>Alertas de progressão e interstício</p></div>
-          <div class="mini-card"><h4>Checklist de Concursos</h4><p>Trilha de etapas e conformidade</p></div>
-          <div class="mini-card"><h4>Controle SCDP</h4><p>Diárias e passagens instruídas</p></div>
-          <div class="mini-card"><h4>GEDOC</h4><p>Gerador e repositório de documentos</p></div>
-        </div>
+<section class="section panel" id="riscos">
+  <div class="panel-head"><div class="num">08</div><div><h3>Objeções previsíveis — e respostas já incorporadas ao desenho</h3><p>Principais dúvidas e salvaguardas do desenho</p></div></div>
+  <div class="panel-body">
+    <div class="qna">
+      <div class="q"><h4>“Quem vai atender na segunda e na sexta?”</h4><p>Nesses dias o SSN não abre presencialmente, mas mantém o canal remoto. Demandas que exigirem presença ficam para a janela presencial ou são organizadas por agendamento.</p></div>
+      <div class="q"><h4>“E se houver uma demanda física urgente?”</h4><p>Usa-se o mecanismo de exceção e organização da equipe. A existência de um piloto permite registrar quantas vezes isso realmente ocorre.</p></div>
+      <div class="q"><h4>“Não vai prejudicar o atendimento?”</h4><p>Esse é um indicador do piloto. A unidade mantém três dias físicos e cinco dias digitais; o resultado será medido por demanda, tempo de resposta e pendências.</p></div>
+      <div class="q"><h4>“A equipe não ficará fragmentada?”</h4><p>Quarta-feira é o dia de presença conjunta, além de reuniões e alinhamentos remotos nos demais dias quando necessário.</p></div>
+      <div class="q"><h4>“Isso é privilégio?”</h4><p>Não deve ser defendido como benefício pessoal. O foco é compatibilizar a presença com a natureza das atividades e preservar o serviço.</p></div>
+      <div class="q"><h4>“Por que não deixar como está?”</h4><p>Porque o piloto permite testar um arranjo potencialmente mais eficiente, com menor deslocamento individual e maior previsibilidade do atendimento.</p></div>
+    </div>
+  </div>
+</section>
 
-        <h4 style="margin-bottom:14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);">O que o Portal já retira da rotina presencial</h4>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Aplicação</th>
-                <th>Função operacional</th>
-                <th>Efeito esperado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Formulário de Planejamento</strong></td><td>Coleta intenções, horários, orientações e licenças</td><td><span class="badge brand"><span class="dot"></span>Reduz solicitações presenciais</span></td></tr>
-              <tr><td><strong>Controle de Ementas</strong></td><td>Acompanha entrega por turma/docente</td><td><span class="badge brand"><span class="dot"></span>Cobrança e conferência remotas</span></td></tr>
-              <tr><td><strong>Acompanhamento SEI</strong></td><td>Mostra status, localização e prazos</td><td><span class="badge brand"><span class="dot"></span>Reduz consultas manuais</span></td></tr>
-              <tr><td><strong>DTSs e Comissões</strong></td><td>Registra atos e membros</td><td><span class="badge brand"><span class="dot"></span>Formaliza fluxo administrativo</span></td></tr>
-              <tr><td><strong>GEDOC</strong></td><td>Constrói, organiza e localiza documentos</td><td><span class="badge brand"><span class="dot"></span>Reduz dependência do arquivo físico</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+<section class="section panel" id="comunicacao">
+  <div class="panel-head"><div class="num">09</div><div><h3>Comunicação da escala: clareza e previsibilidade</h3><p>O usuário do serviço precisa saber antes de se deslocar</p></div></div>
+  <div class="panel-body">
+    <div class="grid2">
+      <div class="card" style="border:1px solid var(--line);border-radius:9px"><h4>Site do SSN / ESS</h4><p>Escala visível em destaque: <strong>“Atendimento presencial: terça, quarta e quinta”</strong> + canal remoto + horário.</p></div>
+      <div class="card" style="border:1px solid var(--line);border-radius:9px"><h4>Secretaria / porta</h4><p>Informação visual dos cinco dias, distinguindo claramente presencial x remoto.</p></div>
+      <div class="card" style="border:1px solid var(--line);border-radius:9px"><h4>Assinatura de e-mail</h4><p>Informação padronizada: “Atendimento presencial: Ter–Qua–Qui · Atendimento remoto: Seg–Sex”.</p></div>
+      <div class="card" style="border:1px solid var(--line);border-radius:9px"><h4>Formulários</h4><p>Canal integrado para solicitação prévia e retirada na janela presencial.</p></div>
+    </div>
+    <div class="callout green" style="margin-top:18px"><strong>Princípio de comunicação:</strong> ninguém deve descobrir a escala depois de chegar ao campus. A informação precisa ser encontrada no site, na assinatura de e-mail, no formulário e na porta da secretaria.</div>
+  </div>
+</section>
 
-    <section class="section panel" id="norma">
-      <div class="panel-header">
-        <div class="panel-num">§05</div>
-        <div class="panel-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-        <div class="panel-title">
-          <h3>Base normativa: o NPGD-UFF já está institucionalizado</h3>
-          <p>IN GAR/RET/UFF nº 113/2024 · Programa de Gestão e Desempenho</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="grid-2">
-          <div>
-            <h4 style="margin-bottom:14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);">O que a IN 113 estabelece</h4>
-            <ul class="bullet-list">
-              <li><i class="fa-solid fa-circle-check"></i><span>Institui o Novo Programa de Gestão e Desempenho da UFF (NPGD-UFF).</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>As atividades são avaliadas pela <strong>efetividade e qualidade das entregas</strong>.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Contempla modalidade presencial e <strong>teletrabalho parcial ou integral</strong>, conforme regras institucionais.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>A participação exige <strong>Plano de Entregas</strong>, <strong>Plano de Trabalho</strong> e <strong>Termo de Ciência e Responsabilidade</strong> no Petrvs.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>O sistema <strong>Petrvs</strong> é o ambiente institucional de acompanhamento do NPGD.</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style="margin-bottom:14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);">O que isso muda para a proposta</h4>
-            <ul class="bullet-list">
-              <li><i class="fa-solid fa-arrow-right"></i><span>Não basta mudar a escala: é necessário <strong>pactuar entregas e responsabilidades</strong>.</span></li>
-              <li><i class="fa-solid fa-arrow-right"></i><span>O desenho 2×3 deve <strong>preservar o atendimento</strong> definido para a unidade.</span></li>
-              <li><i class="fa-solid fa-arrow-right"></i><span>O acompanhamento deve usar <strong>indicadores objetivos</strong> e revisão do arranjo.</span></li>
-              <li><i class="fa-solid fa-arrow-right"></i><span>A UFF informou em agosto/2026 que a versão 3.0 do Petrvs manteve a lógica geral e a regulamentação vigente do NPGD/UFF.</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="callout brand" style="margin-top:28px">
-          <strong>Conclusão normativa:</strong> a IN 113 não exige presencialidade diária. Exige atendimento preservado. A proposta 2×3 preserva — e qualifica — o atendimento, concentrando-o nos dias de maior fluxo docente.
-        </div>
-      </div>
-    </section>
+<section class="section panel" id="deliberacao">
+  <div class="panel-head"><div class="num">10</div><div><h3>Síntese do desenho apresentado</h3><p>Serviço, presencialidade, infraestrutura digital e acompanhamento</p></div></div>
+  <div class="panel-body">
+    <div class="callout blue" style="font-size:14px;padding:20px"><strong>Jornada apresentada:</strong> regime individual de <strong>2×3</strong>, com <strong>três dias de atendimento presencial da unidade</strong>, atendimento digital durante os cinco dias úteis e presença conjunta às quartas-feiras. A distribuição visual apresentada é <strong>Luiz — terça e quarta</strong> e <strong>Patrícia — quarta e quinta</strong>, com segunda e sexta em trabalho remoto de processamento e fechamento.</div>
+    <div class="grid3" style="margin-top:18px">
+      <div class="card"><div class="big-number">1</div><h4>Preserva o atendimento</h4><p>Três dias presenciais e cinco dias de canal remoto.</p></div>
+      <div class="card"><div class="big-number">2</div><h4>Organiza a equipe</h4><p>Quarta-feira com presença conjunta e rotinas de integração.</p></div>
+      <div class="card"><div class="big-number">3</div><h4>Permite decisão por evidência</h4><p>Indicadores e revisão após 30, 60 e 90 dias.</p></div>
+    </div>
+    <div class="callout" style="margin-top:18px"><strong>Mensagem final para o debate:</strong> “Não estamos propondo trabalhar menos. Estamos propondo <strong>trabalhar presencialmente quando a presença é útil</strong> e usar o trabalho remoto quando a atividade pode ser executada com mais foco. O serviço permanece aberto; a presença individual fica melhor distribuída.”</div>
+    <div class="source-note">Painel de apresentação construído a partir do painel operacional existente do SSN e de referências oficiais do NPGD/UFF. <a href="https://ssness-uff.github.io/Jornada-de-trabalho/" target="_blank" rel="noopener">Ver painel original</a>.</div>
+  </div>
+</section>
 
-    <section class="section panel" id="precedentes">
-      <div class="panel-header">
-        <div class="panel-num">§06</div>
-        <div class="panel-icon"><i class="fa-solid fa-sitemap"></i></div>
-        <div class="panel-title">
-          <h3>Precedentes na UFF e na ESS: o modelo não é uma exceção</h3>
-          <p>Outras instâncias já operam em regime híbrido, com lógica semelhante</p>
-        </div>
-      </div>
-      <div class="panel-body">
-
-        <h4 style="margin-bottom:14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);">Unidades com rotina análoga</h4>
-        <div class="table-wrap" style="margin-bottom:28px">
-          <table>
-            <thead>
-              <tr>
-                <th>Unidade / ambiente</th>
-                <th>Modelo atual</th>
-                <th>Natureza do trabalho</th>
-                <th>Observação</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Pós-graduações da ESS</strong></td>
-                <td><span class="badge ok"><span class="dot"></span>3 dias abertos · 2 fechados</span></td>
-                <td>Majoritariamente digital</td>
-                <td>Rotina análoga ao SSN — já operam em regime híbrido</td>
-              </tr>
-              <tr>
-                <td><strong>Casos na UFF (4×1)</strong></td>
-                <td><span class="badge ok"><span class="dot"></span>4 dias remotos · 1 presencial</span></td>
-                <td>Entregas físicas por demanda agendada</td>
-                <td>Agendamentos concentrados no único dia presencial; nos demais, portas fechadas para trabalho interno</td>
-              </tr>
-              <tr>
-                <td><strong>Coordenação de Curso</strong></td>
-                <td><span class="badge warn"><span class="dot"></span>Modelo misto</span></td>
-                <td>Mista</td>
-                <td>5 servidores ativos: 1 presencial 100%, 1 presencial 100% por 1 ano e 3 híbridos — há espaço para melhoria do rodízio e racionalização do atendimento presencial</td>
-              </tr>
-              <tr>
-                <td><strong>Direção</strong></td>
-                <td><span class="badge info"><span class="dot"></span>Potencial de revisão</span></td>
-                <td>Mista com entregas agendáveis</td>
-                <td>2 servidores ativos, trabalho híbrido. Poderia adotar a lógica de atendimento presencial por demanda (email de comunicação + dias específicos), como outras escolas da UFF já fazem, além de haver espaço para racionalização do atendimento presencial.</td>
-              </tr>
-              <tr>
-                <td><strong>SSN — proposta</strong></td>
-                <td><span class="badge brand"><span class="dot"></span>2 dias presenciais · 3 remotos</span></td>
-                <td>Majoritariamente digital</td>
-                <td>Já opera 2×3 nas férias acadêmicas, com resultados conhecidos</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="callout brand">
-          <strong>Leitura institucional:</strong> a proposta do SSN não cria um modelo isolado. Ela se <strong>alinha a práticas já consolidadas</strong> em unidades da própria UFF — incluindo as Pós-graduações da ESS, que compartilham a mesma natureza digital de trabalho. O que se propõe é <strong>harmonizar</strong> o SSN a esse padrão.
-        </div>
-
-        <div class="callout" style="margin-top:14px">
-          <strong>Coordenação de Curso:</strong> com 5 servidores ativos e perfis heterogêneos (um presencial integral, um presencial integral por um ano, três em regime híbrido), há espaço para um rodízio mais equilibrado — o que reduziria a pressão sobre os servidores e ampliaria a flexibilidade do setor, sem perda de cobertura.
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section panel" id="escala">
-      <div class="panel-header">
-        <div class="panel-num">§07</div>
-        <div class="panel-icon accent"><i class="fa-solid fa-table-cells"></i></div>
-        <div class="panel-title">
-          <h3>Proposta: Jornada Híbrida Otimizada (2×3)</h3>
-          <p>2 dias presenciais + 3 dias remotos · 6h diárias · 13h–19h</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="kpi-grid" style="margin-bottom:28px">
-          <div class="kpi">
-            <div class="kpi-label">Jornada diária</div>
-            <div class="kpi-value display">6h</div>
-            <div class="kpi-sub">13h–19h ininterruptas</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Dias presenciais</div>
-            <div class="kpi-value display">2</div>
-            <div class="kpi-sub">por servidor(a)</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Dias remotos</div>
-            <div class="kpi-value display">3</div>
-            <div class="kpi-sub">por servidor(a)</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-label">Presença conjunta</div>
-            <div class="kpi-value display">Qua</div>
-            <div class="kpi-sub">equipe completa</div>
-          </div>
-        </div>
-
-        <h4 style="margin-bottom:14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);">Semana proposta</h4>
-        <div class="scale-week">
-          <div class="day-cell">
-            <div class="day-name">Seg</div>
-            <div class="day-status">REMOTO</div>
-            <div class="day-note">processamento</div>
-          </div>
-          <div class="day-cell presential">
-            <div class="day-name">Ter</div>
-            <div class="day-status">PRESENCIAL</div>
-            <div class="day-note">atendimento</div>
-          </div>
-          <div class="day-cell presential">
-            <div class="day-name">Qua</div>
-            <div class="day-status">PRESENCIAL</div>
-            <div class="day-note">equipe conjunta</div>
-          </div>
-          <div class="day-cell presential">
-            <div class="day-name">Qui</div>
-            <div class="day-status">PRESENCIAL</div>
-            <div class="day-note">atendimento</div>
-          </div>
-          <div class="day-cell">
-            <div class="day-name">Sex</div>
-            <div class="day-status">REMOTO</div>
-            <div class="day-note">fechamento</div>
-          </div>
-        </div>
-
-        <h4 style="margin:32px 0 14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);">Escala de revezamento</h4>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Servidor(a)</th>
-                <th class="num">Segunda</th>
-                <th class="num">Terça</th>
-                <th class="num">Quarta</th>
-                <th class="num">Quinta</th>
-                <th class="num">Sexta</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Patrícia</strong></td>
-                <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-                <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
-                <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-              </tr>
-              <tr>
-                <td><strong>Luiz</strong></td>
-                <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
-                <td class="num"><span class="badge brand"><span class="dot"></span>Presencial</span></td>
-                <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-                <td class="num"><span class="badge info"><span class="dot"></span>Remoto</span></td>
-              </tr>
-              <tr>
-                <td><strong>Secretaria</strong></td>
-                <td class="num"><span class="badge warn"><span class="dot"></span>Foco remoto</span></td>
-                <td class="num"><span class="badge ok"><span class="dot"></span>ABERTA</span></td>
-                <td class="num"><span class="badge ok"><span class="dot"></span>ABERTA</span></td>
-                <td class="num"><span class="badge ok"><span class="dot"></span>ABERTA</span></td>
-                <td class="num"><span class="badge warn"><span class="dot"></span>Foco remoto</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h4 style="margin:32px 0 14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);">Cada dia recebe uma função operacional</h4>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Dia</th>
-                <th>Modo</th>
-                <th>Função principal</th>
-                <th>Por que faz sentido</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Segunda</strong></td><td><span class="badge info"><span class="dot"></span>Remoto</span></td><td>Processamento sistêmico</td><td>Concentração em SEI, planilhas, documentos e pendências</td></tr>
-              <tr><td><strong>Terça</strong></td><td><span class="badge brand"><span class="dot"></span>Presencial</span></td><td>Atendimento</td><td>Início da cobertura presencial</td></tr>
-              <tr><td><strong>Quarta</strong></td><td><span class="badge brand"><span class="dot"></span>Presencial conjunto</span></td><td>Sinergia</td><td>Reuniões, colegiados e alinhamento</td></tr>
-              <tr><td><strong>Quinta</strong></td><td><span class="badge brand"><span class="dot"></span>Presencial</span></td><td>Atendimento</td><td>Complementação da cobertura</td></tr>
-              <tr><td><strong>Sexta</strong></td><td><span class="badge info"><span class="dot"></span>Remoto</span></td><td>Fechamento</td><td>Pendências, consolidação, relatórios e backups</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="callout" style="margin-top:28px">
-          A lógica não é "tirar" presença: é <strong>deslocá-la para onde a presença tem maior utilidade operacional</strong>.
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel" id="diarios">
-      <div class="panel-header">
-        <div class="panel-num">§08</div>
-        <div class="panel-icon"><i class="fa-solid fa-print"></i></div>
-        <div class="panel-title">
-          <h3>Atividades presenciais prioritárias continuam atendidas</h3>
-          <p>Diários docentes e consultas ao arquivo físico</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="grid-2">
-          <div>
-            <h4 style="margin-bottom:14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);"><i class="fa-solid fa-file-pen" style="color:var(--accent);margin-right:8px"></i> Impressão de diários</h4>
-            <ul class="bullet-list">
-              <li><i class="fa-solid fa-circle-check"></i><span>O SSN <strong>não tem problema algum em atender essa demanda</strong> — imprime sem restrições e continuará imprimindo.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Todos os docentes têm acesso ao <strong>Quadro de Horários</strong> e podem imprimir em qualquer lugar, se preferirem.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>A impressão pelo SSN permanecerá disponível nos dias presenciais (Ter–Qui).</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Solicitações remotas continuam possíveis por e-mail e formulário, com retirada agendada.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Não é uma barreira à proposta — é um serviço que se mantém, com janela mais previsível.</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style="margin-bottom:14px; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);"><i class="fa-solid fa-box-archive" style="color:var(--accent);margin-right:8px"></i> Arquivo físico</h4>
-            <ul class="bullet-list">
-              <li><i class="fa-solid fa-circle-check"></i><span>Mapeamento atualizado: <strong>4 consultas físicas</strong> em 2,5 anos.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Volume residual — não justifica presença diária.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Demandas podem ser agendadas para os dias presenciais.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Digitalização progressiva reduz a dependência do acervo físico.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>GEDOC centraliza e indexa documentos oficiais.</span></li>
-              <li><i class="fa-solid fa-circle-check"></i><span>Caso seja aceita a troca de escala, as impressões pedidas com antecedência para entrega eventual para segunda e sexta-feira serão entregues no escaninho do docente, perto da Direção.</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="callout brand" style="margin-top:28px">
-          <strong>Princípio:</strong> preservar o serviço e tornar previsível o momento de atendimento. A impressão de diários <strong>não é um obstáculo</strong> — é uma demanda atendida com tranquilidade pelo Departamento.
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel" id="comparativo">
-      <div class="panel-header">
-        <div class="panel-num">§09</div>
-        <div class="panel-icon accent"><i class="fa-solid fa-arrows-left-right"></i></div>
-        <div class="panel-title">
-          <h3>Matriz comparativa: atual × proposta</h3>
-          <p>Ganhos esperados por dimensão</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Dimensão</th>
-                <th>Atual — 3×2</th>
-                <th>Proposta — 2×3</th>
-                <th>Efeito esperado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Atendimento docente</strong></td><td>Menos concentrado, difuso</td><td>Concentrado Ter–Qui</td><td><span class="badge brand"><span class="dot"></span>Maior previsibilidade</span></td></tr>
-              <tr><td><strong>Produtividade sistêmica</strong></td><td>Intercalada com presença</td><td>Seg/Sex focados</td><td><span class="badge brand"><span class="dot"></span>+40% concentração</span></td></tr>
-              <tr><td><strong>Sinergia da equipe</strong></td><td>Menos concentrada</td><td>Quarta conjunta</td><td><span class="badge brand"><span class="dot"></span>Alinhamento</span></td></tr>
-              <tr><td><strong>Deslocamento por servidor</strong></td><td>3 dias/semana</td><td>2 dias/semana</td><td><span class="badge ok"><span class="dot"></span>Redução de 1/3</span></td></tr>
-              <tr><td><strong>Atendimento presencial (secretaria)</strong></td><td>5 dias/semana</td><td>3 dias/semana</td><td><span class="badge ok"><span class="dot"></span>Redução de 40%</span></td></tr>
-              <tr><td><strong>Custo de transporte</strong></td><td>3 dias/semana</td><td>2 dias/semana</td><td><span class="badge info"><span class="dot"></span>Redução de 1/3 · impacto moderado</span></td></tr>
-              <tr><td><strong>Estresse ocupacional</strong></td><td>Elevado</td><td>Mitigado</td><td><span class="badge ok"><span class="dot"></span>Saúde do servidor</span></td></tr>
-              <tr><td><strong>Acompanhamento</strong></td><td>Rotina presencial</td><td>Entrega + indicadores</td><td><span class="badge accent"><span class="dot"></span>Maior rastreabilidade</span></td></tr>
-              <tr><td><strong>Aderência ao NPGD</strong></td><td>Parcial</td><td>Total</td><td><span class="badge accent"><span class="dot"></span>Foco em entregas</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="callout" style="margin-top:28px">
-          <strong>Nota metodológica:</strong> a redução do deslocamento por servidor é de <strong>1/3</strong> (de 3 para 2 dias). A redução do atendimento presencial de balcão é de <strong>40%</strong> (de 5 para 3 dias). O custo de transporte cai na mesma proporção do deslocamento, mas <strong>não altera significativamente a rotina de trabalho</strong> — o foco permanece nas entregas.
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel" id="comunicacao">
-      <div class="panel-header">
-        <div class="panel-num">§10</div>
-        <div class="panel-icon"><i class="fa-solid fa-bullhorn"></i></div>
-        <div class="panel-title">
-          <h3>Plano de comunicação: mudar a rotina sem gerar ruído</h3>
-          <p>Estratégia multicanal com vigência em 2027.1</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="callout brand" style="margin-bottom:24px">
-          <strong>Janela de implantação:</strong> a proposta começa a operar em <strong>2027.1</strong>. O PGD será alterado em dezembro/2026 e o período de recesso e férias estudantis já opera com horário diferenciado (o próprio SSN já adota 2×3 nesse intervalo) — o que <strong>facilita a transição sem ruptura</strong> e permite preparação prévia no Petrvs durante dezembro.
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Canal</th>
-                <th>Ação</th>
-                <th>Prazo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Colegiado</strong></td><td>Apresentação e deliberação da proposta</td><td><span class="badge warn"><span class="dot"></span>Novembro/2026</span></td></tr>
-              <tr><td><strong>E-mail institucional</strong></td><td>Comunicado aos docentes sobre a nova escala</td><td><span class="badge info"><span class="dot"></span>Dezembro/2026</span></td></tr>
-              <tr><td><strong>Aviso físico</strong></td><td>Cartaz na secretaria e murais com horários</td><td><span class="badge info"><span class="dot"></span>Dezembro/2026</span></td></tr>
-              <tr><td><strong>Assinatura de e-mail</strong></td><td>Atualizar horários e canais de suporte</td><td><span class="badge info"><span class="dot"></span>Dezembro/2026</span></td></tr>
-              <tr><td><strong>Site da ESS</strong></td><td>Publicar escala e contatos atualizados</td><td><span class="badge info"><span class="dot"></span>Dezembro/2026</span></td></tr>
-              <tr><td><strong>Formulários virtuais</strong></td><td>Consolidar canais de solicitação remota</td><td><span class="badge brand"><span class="dot"></span>Contínuo</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel" id="indicadores">
-      <div class="panel-header">
-        <div class="panel-num">§11</div>
-        <div class="panel-icon accent"><i class="fa-solid fa-gauge-high"></i></div>
-        <div class="panel-title">
-          <h3>Indicadores para testar a proposta — não apenas defendê-la</h3>
-          <p>Métricas do piloto de 90 dias em 2027.1</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Indicador</th>
-                <th class="num">Meta inicial</th>
-                <th class="num">Periodicidade</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Entregas no prazo</strong></td><td class="num highlight">100%</td><td class="num">Mensal</td></tr>
-              <tr><td><strong>Atendimentos presenciais</strong></td><td class="num highlight">≥ 90% da demanda</td><td class="num">Mensal</td></tr>
-              <tr><td><strong>Satisfação docente</strong></td><td class="num highlight">≥ 85%</td><td class="num">Semestral</td></tr>
-              <tr><td><strong>Processos SEI acompanhados</strong></td><td class="num highlight">100%</td><td class="num">Mensal</td></tr>
-              <tr><td><strong>Backups realizados</strong></td><td class="num highlight">100%</td><td class="num">Semanal</td></tr>
-              <tr><td><strong>Absenteísmo</strong></td><td class="num highlight">−20%</td><td class="num">Semestral</td></tr>
-              <tr><td><strong>Estresse autorrelatado</strong></td><td class="num highlight">−30%</td><td class="num">Semestral</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel" id="riscos">
-      <div class="panel-header">
-        <div class="panel-num">§12</div>
-        <div class="panel-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="panel-title">
-          <h3>Riscos previsíveis e mecanismos de controle</h3>
-          <p>Matriz de mitigação para o piloto</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Risco</th>
-                <th class="num">Nível</th>
-                <th>Mitigação proposta</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Resistência ou dúvida da gestão</strong></td><td class="num"><span class="badge warn"><span class="dot"></span>Médio</span></td><td>Dados, indicadores, demonstração do Portal, prova de conceito em férias</td></tr>
-              <tr><td><strong>Percepção de redução do serviço</strong></td><td class="num"><span class="badge warn"><span class="dot"></span>Médio</span></td><td>Comunicação clara + cobertura Ter–Qui</td></tr>
-              <tr><td><strong>Demanda reprimida</strong></td><td class="num"><span class="badge info"><span class="dot"></span>Baixo/Médio</span></td><td>Suporte remoto + revisão semanal</td></tr>
-              <tr><td><strong>Sobrecarga em dias excepcionais</strong></td><td class="num"><span class="badge warn"><span class="dot"></span>Médio</span></td><td>Plano de contingência para concursos e bancas (jornadas estendidas já ocorrem)</td></tr>
-              <tr><td><strong>Falha de comunicação</strong></td><td class="num"><span class="badge ok"><span class="dot"></span>Baixo</span></td><td>Plano multicanal com início em dezembro/2026</td></tr>
-              <tr><td><strong>Mudança de necessidade</strong></td><td class="num"><span class="badge warn"><span class="dot"></span>Médio</span></td><td>Revisão do arranjo após 30/60/90 dias</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="callout" style="margin-top:28px">
-          O piloto transforma a mudança em <strong>hipótese mensurável</strong>: implantar → medir → ajustar → formalizar.
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel" id="implantacao">
-      <div class="panel-header">
-        <div class="panel-num">§13</div>
-        <div class="panel-icon accent"><i class="fa-solid fa-road"></i></div>
-        <div class="panel-title">
-          <h3>Implantação em 90 dias — vigência 2027.1</h3>
-          <p>Quatro etapas alinhadas ao calendário acadêmico</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="timeline">
-          <div class="tl-step">
-            <div class="tl-head">Nov/2026</div>
-            <div class="tl-body">
-              <h4>Validação</h4>
-              <p>Apresentação e deliberação no <strong>Colegiado do Departamento</strong>.</p>
-            </div>
-          </div>
-          <div class="tl-step">
-            <div class="tl-head">Dez/2026</div>
-            <div class="tl-body">
-              <h4>Preparação</h4>
-              <p>Comunicação multicanal, configuração no Petrvs (TCR e Plano de Entregas), plano de contingência. Recesso e férias com horário diferenciado facilitam a transição.</p>
-            </div>
-          </div>
-          <div class="tl-step">
-            <div class="tl-head">Jan–Fev/2027.1</div>
-            <div class="tl-body">
-              <h4>Operação</h4>
-              <p>Início do piloto 2×3 + monitoramento semanal dos indicadores.</p>
-            </div>
-          </div>
-          <div class="tl-step">
-            <div class="tl-head">Mar/2027.1</div>
-            <div class="tl-body">
-              <h4>Avaliação</h4>
-              <p>Comparação de indicadores, ajustes e decisão institucional sobre a continuidade.</p>
-            </div>
-          </div>
-        </div>
-        <div class="callout brand" style="margin-top:28px">
-          <strong>Por que 2027.1?</strong> O PGD será alterado em dezembro/2026 e o período de recesso/férias já opera com horário diferenciado (o SSN já adota 2×3 nesse intervalo). Iniciar em 2027.1 permite preparação prévia sem ruptura e alinhamento ao calendário acadêmico.
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel" id="conclusao">
-      <div class="panel-header">
-        <div class="panel-num">§14</div>
-        <div class="panel-icon"><i class="fa-solid fa-flag-checkered"></i></div>
-        <div class="panel-title">
-          <h3>Conclusão</h3>
-          <p>Uma mudança de escala baseada em demanda, entregas e dados</p>
-        </div>
-      </div>
-      <div class="panel-body">
-        <div class="grid-3" style="margin-bottom:28px">
-          <div class="mini-card">
-            <h4><i class="fa-solid fa-arrows-rotate" style="color:var(--accent);margin-right:8px"></i> Continuidade</h4>
-            <p>Atendimento presencial concentrado de terça a quinta.</p>
-          </div>
-          <div class="mini-card">
-            <h4><i class="fa-solid fa-bolt" style="color:var(--accent);margin-right:8px"></i> Produtividade</h4>
-            <p>Segunda e sexta dedicadas ao processamento remoto focado.</p>
-          </div>
-          <div class="mini-card">
-            <h4><i class="fa-solid fa-flask" style="color:var(--accent);margin-right:8px"></i> Comprovação</h4>
-            <p>Modelo já operado nas férias acadêmicas, com resultados conhecidos.</p>
-          </div>
-        </div>
-        <div class="callout brand" style="font-size:14px">
-          <strong>Proposta para deliberação no Colegiado:</strong> aprovar o piloto 2×3 com vigência a partir de <strong>2027.1</strong>, acompanhar os indicadores por 90 dias e decidir com base nos resultados. A proposta não introduz um modelo novo — <strong>institucionaliza</strong> o que o SSN já pratica com sucesso nas férias acadêmicas.
-        </div>
-      </div>
-    </section>
-
-  </main>
+</main>
 </div>
-
-<footer class="app-footer">
-  <div class="footer-brand">
-    <i class="fa-solid fa-building-columns"></i>
-    <span>SSN/UFF — Departamento de Serviço Social de Niterói · Escola de Serviço Social</span>
-  </div>
-  <div>
-    <span class="mono">Jornada Híbrida Otimizada 2×3 · Vigência 2027.1 · Apresentação no Colegiado</span>
-  </div>
+<footer class="footer">
+  <div>SSN/UFF · Escola de Serviço Social · Jornada Híbrida Otimizada 2×3 · Painel de apresentação</div>
+  <div><a href="https://www.uff.br/progepe/programa-de-gestao/" target="_blank" rel="noopener">NPGD-UFF</a> · <a href="https://www.uff.br/faq/" target="_blank" rel="noopener">FAQ UFF</a></div>
 </footer>
 
 <script>
-let currentOrientation = 'landscape';
-
-document.querySelectorAll('.orientation-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.orientation-btn').forEach(b => {
-      b.classList.remove('active');
-      b.setAttribute('aria-pressed', 'false');
-    });
-    btn.classList.add('active');
-    btn.setAttribute('aria-pressed', 'true');
-    currentOrientation = btn.dataset.orient;
-  });
-});
-
-function downloadPDF() {
-  const old = document.getElementById('dynamic-page-style');
-  if (old) old.remove();
-  const style = document.createElement('style');
-  style.id = 'dynamic-page-style';
-  const sizeRule = currentOrientation === 'landscape' ? 'A4 landscape' : 'A4 portrait';
-  style.textContent = `@media print { @page { size: ${sizeRule}; margin: 0; } }`;
-  document.head.appendChild(style);
-  setTimeout(() => { window.print(); }, 80);
-}
-
-function exportDoc() {
-  const html = document.documentElement.outerHTML;
-  const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'Jornada_Hibrida_Otimizada_SSN_UFF_2x3.doc';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
-
-const navItems = document.querySelectorAll('.nav-item');
-const sections = document.querySelectorAll('.section[id]');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navItems.forEach(item => {
-        item.classList.toggle('active', item.getAttribute('href') === '#' + id);
-      });
-    }
-  });
-}, { rootMargin: '-30% 0px -60% 0px' });
-sections.forEach(s => observer.observe(s));
-
-document.querySelectorAll('.filter-pill').forEach(pill => {
-  pill.addEventListener('click', () => {
-    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
-    pill.classList.add('active');
-  });
-});
-
-navItems.forEach(item => {
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(item.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
+const items=[...document.querySelectorAll('.nav a')];
+const sections=[...document.querySelectorAll('.section[id]')];
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){items.forEach(i=>i.classList.toggle('active',i.getAttribute('href')==='#'+entry.target.id));}})},{rootMargin:'-30% 0px -60% 0px'});
+sections.forEach(s=>observer.observe(s));
+items.forEach(i=>i.addEventListener('click',e=>{e.preventDefault();document.querySelector(i.getAttribute('href'))?.scrollIntoView({behavior:'smooth',block:'start'});}));
 </script>
-
 </body>
 </html>
