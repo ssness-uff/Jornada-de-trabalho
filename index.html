@@ -147,6 +147,8 @@ tr:last-child td{border-bottom:0}
 .bar.peak{background:var(--orange)}
 .bar-label{position:absolute;bottom:-24px;font-size:9px;font-weight:700}
 .bar-note{position:absolute;bottom:-43px;font-size:8px;color:var(--soft);text-transform:uppercase;letter-spacing:.08em}
+.bars.dense{gap:3px;padding:0 4px}
+.bars.dense .bar-label{font-size:6.5px;bottom:-22px;white-space:nowrap;letter-spacing:0}
 .chart-caption{display:flex;justify-content:space-between;font-size:8.5px;color:var(--soft);margin-top:46px;text-transform:uppercase;letter-spacing:.1em}
 .demand-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:22px}
 .demand-cards>div{background:#fff;padding:18px}
@@ -267,14 +269,14 @@ body.one #decisao{display:block!important}
 
 <section class="section hero" id="inicio">
 <span class="eyebrow">Proposta para discussão e avaliação</span>
-<h2>Como organizar a presença física a partir da <span style="color:#d29b6b">necessidade real do serviço?</span></h2>
-<p>O ponto de partida não é mudar a escala individual. É responder a uma pergunta de gestão: <strong>qual combinação de presença física e trabalho remoto entrega melhor o serviço do Departamento?</strong> A eventual redução de dias presenciais por servidor aparece apenas como consequência desse diagnóstico.</p>
+<h2>Como organizar a presença física a partir da <span style="color:#d29b6b">necessidade real do serviço</span></h2>
+<p>Qual combinação de presença física e trabalho remoto entrega melhor o serviço do Departamento?</p>
 <div class="thesis">
 <div class="th"><small>1 · Diagnóstico</small><b>Demanda real</b><span>Pouco atendimento presencial e concentração das demandas físicas.</span></div>
 <div class="th"><small>2 · Capacidade</small><b>Serviço remoto</b><span>Atendimento digital ágil e infraestrutura já utilizada.</span></div>
 <div class="th"><small>3 · Síntese do desenho</small><b>Presencial + remoto</b><span>Presencial Ter–Qua–Qui; canal digital Seg–Sex; quarta-feira com equipe completa.</span></div>
 </div>
-<div class="callout" style="background:rgba(255,255,255,.07);border-color:#d29b6b;color:#fff"><strong>Mensagem central:</strong> não estamos propondo menos trabalho presencial como finalidade. Estamos propondo <strong>o trabalho presencial necessário</strong>, mantendo o serviço acessível.</div>
+<div class="callout" style="background:rgba(255,255,255,.07);border-color:#d29b6b;color:#fff">Não estamos propondo menos trabalho presencial como finalidade. Estamos propondo <strong>o trabalho presencial necessário</strong>, mantendo o serviço acessível.</div>
 </section>
 
 <section class="section" id="diagnostico">
@@ -303,7 +305,7 @@ body.one #decisao{display:block!important}
 </section>
 
 <section class="section panel" id="capacidade">
-<div class="ph"><div class="num">02</div><div><h3>O Departamento já possui capacidade para operar digitalmente</h3><p>O Portal de Soluções é infraestrutura de trabalho — não apenas uma vitrine.</p></div></div>
+<div class="ph"><div class="num">02</div><div><h3>O Departamento já possui capacidade para operar digitalmente</h3><p>O Portal de Soluções é infraestrutura de trabalho, não apenas uma vitrine.</p></div></div>
 <div class="pb">
 <div class="grid2">
 <div class="card bx"><div class="bn green">27</div><h4>soluções em uso</h4><p>Dashboards, planilhas, controles, links de sistemas e rotinas que reduzem dependência de circulação física.</p></div>
@@ -329,7 +331,7 @@ body.one #decisao{display:block!important}
 <div class="step"><div class="n">04</div><b>Previsibilidade</b><span>Usuário e equipe sabem quando e como serão atendidos.</span></div>
 <div class="step"><div class="n">05</div><b>Avaliação</b><span>O desenho pode ser medido, corrigido e aperfeiçoado.</span></div>
 </div>
-<div class="callout blue"><strong>Regra de decisão:</strong> atividade → necessidade de presença → cobertura da unidade → distribuição da equipe → escala individual. A escala é a última etapa, não a primeira.</div>
+<div class="callout blue"><strong>Regra de decisão:</strong> atividade → necessidade de presença → cobertura da unidade → distribuição da equipe → escala individual.</div>
 </div>
 </section>
 
@@ -348,7 +350,7 @@ body.one #decisao{display:block!important}
 <tr><td><strong>Dúvida, documento digital ou acompanhamento</strong></td><td>E-mail / sistema</td><td><span class="badge info">Seg–Sex</span></td></tr>
 <tr><td><strong>Entrega, retirada ou consulta física</strong></td><td>Presencial</td><td><span class="badge ok">Ter–Qua–Qui</span></td></tr>
 <tr><td><strong>Demanda que exige interação presencial excepcional</strong></td><td>Agendamento</td><td><span class="badge warn">Contingência</span></td></tr>
-<tr><td><strong>Usuário precisa saber quando comparecer</strong></td><td>Informação pública</td><td><span class="badge info">Escala divulgada</span></td></tr>
+<tr><td><strong>A Comunidade Acadêmica precisa estar informada</strong></td><td>Informação pública</td><td><span class="badge info">Escala divulgada</span></td></tr>
 </tbody>
 </table>
 </div>
@@ -386,7 +388,7 @@ body.one #decisao{display:block!important}
 <div class="day pres"><div class="dn">Quinta</div><div class="dm">PRESENCIAL</div><div class="dnote">Atendimento</div><div class="dw">Patrícia</div></div>
 <div class="day"><div class="dn">Sexta</div><div class="dm">REMOTO</div><div class="dnote">Fechamento e pendências</div><div class="dw">Equipe on-line</div></div>
 </div>
-<div class="callout green"><strong>Perceba a lógica:</strong> primeiro definimos três dias de cobertura física; depois distribuímos essa cobertura. O resultado de <strong>2 dias presenciais + 3 remotos por servidor</strong> não é o objetivo da proposta — é uma consequência possível do dimensionamento.</div>
+<div class="callout green"><strong>Perceba a lógica:</strong> primeiro definimos três dias de cobertura física; depois distribuímos essa cobertura. O resultado de <strong>2 dias presenciais + 3 remotos por servidor</strong> não é o objetivo da proposta, é uma consequência possível do dimensionamento.</div>
 <div class="tw" style="margin-top:18px">
 <table>
 <thead><tr><th>Dimensão</th><th>Desenho</th><th>Por que existe?</th></tr></thead>
@@ -404,12 +406,11 @@ body.one #decisao{display:block!important}
 <section class="section panel" id="controle">
 <div class="ph"><div class="num">07</div><div><h3>Implementar, medir e ajustar</h3><p>A proposta ganha força quando deixa de ser uma aposta e passa a ser uma experiência avaliável.</p></div></div>
 <div class="pb">
-<div class="flowsteps">
-<div class="step"><div class="n">01</div><b>Piloto</b><span>Adotar o novo desenho por período definido, dentro das regras institucionais.</span></div>
-<div class="step"><div class="n">02</div><b>Comunicação</b><span>Publicar dias, canais, horários e procedimento para exceções.</span></div>
-<div class="step"><div class="n">03</div><b>Medição</b><span>Acompanhar atendimento, respostas, entregas e ocorrências.</span></div>
-<div class="step"><div class="n">04</div><b>Revisão</b><span>Comparar resultados com a situação anterior.</span></div>
-<div class="step"><div class="n">05</div><b>Ajuste</b><span>Manter, aperfeiçoar ou rever o desenho conforme evidências.</span></div>
+<div class="flowsteps" style="grid-template-columns:repeat(4,1fr)">
+<div class="step"><div class="n">01</div><b>Comunicação</b><span>Publicar dias, canais, horários e procedimento para exceções.</span></div>
+<div class="step"><div class="n">02</div><b>Medição</b><span>Acompanhar atendimento, respostas, entregas e ocorrências.</span></div>
+<div class="step"><div class="n">03</div><b>Revisão</b><span>Comparar resultados com a situação anterior.</span></div>
+<div class="step"><div class="n">04</div><b>Ajuste</b><span>Manter, aperfeiçoar ou rever o desenho conforme evidências.</span></div>
 </div>
 <div class="metrics" style="margin-top:20px">
 <div class="metric"><b>Atendimento</b><span>Volume presencial e remoto; demandas concluídas.</span></div>
@@ -417,12 +418,12 @@ body.one #decisao{display:block!important}
 <div class="metric"><b>Entregas</b><span>Prazos, pendências e produção da unidade.</span></div>
 <div class="metric"><b>Ocorrências</b><span>Exceções, reclamações e necessidade de reforço presencial.</span></div>
 </div>
-<div class="callout blue"><strong>Proposta de governança:</strong> a chefia e a equipe acompanham o funcionamento do modelo e podem ajustar a escala sempre que a necessidade do serviço indicar. O objetivo é tornar a organização melhor — não defender uma escala a qualquer custo.</div>
+<div class="callout blue"><strong>Proposta de governança:</strong> a chefia e a equipe acompanham o funcionamento do modelo e podem ajustar a escala sempre que a necessidade do serviço indicar. O objetivo é tornar a organização melhor, não defender uma escala a qualquer custo.</div>
 </div>
 </section>
 
 <section class="section panel" id="npgd">
-<div class="ph"><div class="num">08</div><div><h3>O NPGD-UFF já admite o desenho híbrido</h3><p>O debate passa a ser sobre a melhor distribuição da presencialidade para a unidade.</p></div></div>
+<div class="ph"><div class="num">08</div><div><h3>O NPGD-UFF já admite o desenho híbrido, a ESS já utiliza</h3><p>O debate passa a ser sobre a melhor distribuição da presencialidade para a unidade.</p></div></div>
 <div class="pb">
 <div class="evidence-kpis">
 <div class="evidence-kpi"><div class="big">2.218</div><b>servidores participantes</b><span>Dados de dezembro de 2025 no Relatório Gerencial do NPGD/UFF.</span></div>
@@ -448,6 +449,7 @@ body.one #decisao{display:block!important}
 <tr><td><strong>PPG em Política Social — ESS/UFF</strong></td><td>Seg–Qua · 9h–21h</td><td>Qui–Sex · e-mail</td><td>Exemplo claro de 3×2 publicizado por dia.</td><td><span class="precedent-status">3×2 confirmado</span></td></tr>
 <tr><td><strong>Coord. Acadêmica de Engenharia de Agronômicos — VGA/UFF</strong></td><td>Ter–Qua–Sex</td><td>Seg–Qui</td><td>Escala semanal com dias remotos e presenciais explícitos.</td><td><span class="precedent-status">3×2 confirmado</span></td></tr>
 <tr><td><strong>PPGD/UFF — Direito</strong></td><td>Ter · 14h–17h · entregas</td><td>Todas as demandas</td><td>A presença física pode ser concentrada em janela de atendimento.</td><td><span class="precedent-status">1 dia físico</span></td></tr>
+<tr><td><strong>Coordenação de Engenharia de Telecomunicações — TGT/TCE</strong></td><td>Segunda e Quarta · 09:00 às 13:00</td><td>Segunda à Sexta</td><td>Presença concentrada em dois dias, com janela matinal de atendimento.</td><td><span class="precedent-status">2 dias físicos</span></td></tr>
 </tbody>
 </table>
 </div>
@@ -462,25 +464,31 @@ body.one #decisao{display:block!important}
 <div>
 <div class="chart-title">Por dia da semana</div>
 <div class="bars">
-<div class="bar-wrap"><div class="bar low" style="height:28%"></div><span class="bar-label">Seg</span><span class="bar-note">digital</span></div>
-<div class="bar-wrap"><div class="bar" style="height:94%"></div><span class="bar-label">Ter</span><span class="bar-note">aberto</span></div>
-<div class="bar-wrap"><div class="bar" style="height:52%"></div><span class="bar-label">Qua</span><span class="bar-note">aberto</span></div>
-<div class="bar-wrap"><div class="bar" style="height:70%"></div><span class="bar-label">Qui</span><span class="bar-note">aberto</span></div>
-<div class="bar-wrap"><div class="bar low" style="height:28%"></div><span class="bar-label">Sex</span><span class="bar-note">digital</span></div>
+<div class="bar-wrap"><div class="bar low" style="height:40%"></div><span class="bar-label">Seg</span><span class="bar-note">digital</span></div>
+<div class="bar-wrap"><div class="bar peak" style="height:100%"></div><span class="bar-label">Ter</span><span class="bar-note">aberto</span></div>
+<div class="bar-wrap"><div class="bar" style="height:60%"></div><span class="bar-label">Qua</span><span class="bar-note">aberto</span></div>
+<div class="bar-wrap"><div class="bar" style="height:80%"></div><span class="bar-label">Qui</span><span class="bar-note">aberto</span></div>
+<div class="bar-wrap"><div class="bar low" style="height:20%"></div><span class="bar-label">Sex</span><span class="bar-note">digital</span></div>
 </div>
 <div class="chart-caption"><span>menor procura</span><span>maior procura</span></div>
 </div>
 <div>
 <div class="chart-title">Por horário · 13h às 19h</div>
-<div class="bars">
-<div class="bar-wrap"><div class="bar peak" style="height:94%"></div><span class="bar-label">13h</span></div>
-<div class="bar-wrap"><div class="bar low" style="height:52%"></div><span class="bar-label">14h</span></div>
-<div class="bar-wrap"><div class="bar low" style="height:52%"></div><span class="bar-label">15h</span></div>
-<div class="bar-wrap"><div class="bar low" style="height:52%"></div><span class="bar-label">16h</span></div>
-<div class="bar-wrap"><div class="bar peak" style="height:70%"></div><span class="bar-label">17h</span></div>
-<div class="bar-wrap"><div class="bar low" style="height:28%"></div><span class="bar-label">18h</span></div>
+<div class="bars dense">
+<div class="bar-wrap"><div class="bar peak" style="height:70%"></div><span class="bar-label">13h</span></div>
+<div class="bar-wrap"><div class="bar peak" style="height:100%"></div><span class="bar-label">13:30</span></div>
+<div class="bar-wrap"><div class="bar" style="height:50%"></div><span class="bar-label">14h</span></div>
+<div class="bar-wrap"><div class="bar" style="height:30%"></div><span class="bar-label">14:30</span></div>
+<div class="bar-wrap"><div class="bar low" style="height:10%"></div><span class="bar-label">15h</span></div>
+<div class="bar-wrap"><div class="bar low" style="height:10%"></div><span class="bar-label">15:30</span></div>
+<div class="bar-wrap"><div class="bar low" style="height:20%"></div><span class="bar-label">16h</span></div>
+<div class="bar-wrap"><div class="bar" style="height:40%"></div><span class="bar-label">16:30</span></div>
+<div class="bar-wrap"><div class="bar" style="height:50%"></div><span class="bar-label">17h</span></div>
+<div class="bar-wrap"><div class="bar" style="height:30%"></div><span class="bar-label">17:30</span></div>
+<div class="bar-wrap"><div class="bar low" style="height:20%"></div><span class="bar-label">18h</span></div>
+<div class="bar-wrap"><div class="bar low" style="height:10%"></div><span class="bar-label">18:30</span></div>
 </div>
-<div class="chart-caption"><span>menor procura</span><span>maior procura</span></div>
+<div class="chart-caption" style="margin-top:38px"><span>menor procura</span><span>maior procura</span></div>
 </div>
 </div>
 <div class="demand-cards">
@@ -511,11 +519,10 @@ body.one #decisao{display:block!important}
 <h3>Presença física concentrada; trabalho remoto onde a atividade permite.</h3>
 <p>O desenho combina <strong>atendimento presencial de terça a quinta</strong>, <strong>equipe completa na quarta-feira</strong> e <strong>continuidade digital de segunda a sexta</strong>. A distribuição individual de dois dias presenciais e três remotos é consequência do dimensionamento da cobertura, e não o objetivo isolado da mudança.</p>
 <div class="decision">
-<div><small>1 · Aprovar</small><b>Princípio de adequação da presença à necessidade do serviço.</b></div>
-<div><small>2 · Experimentar</small><b>Aplicar o desenho como modelo avaliável, dentro das normas institucionais.</b></div>
-<div><small>3 · Avaliar</small><b>Medir atendimento, entregas, respostas e ocorrências antes de consolidar.</b></div>
+<div><small>1 · Aprovar</small><b>Não estamos propondo trabalhar menos.</b></div>
+<div><small>2 · Experimentar</small><b>Estamos propondo trabalhar presencialmente quando a presença é útil e utilizar o trabalho remoto quando a atividade pode ser executada com a mesma ou maior efetividade.</b></div>
+<div><small>3 · Avaliar</small><b>O serviço vem primeiro; a escala é consequência.</b></div>
 </div>
-<div class="callout" style="background:rgba(255,255,255,.07);border-color:#d29b6b;color:#fff;font-size:14px;margin-top:24px"><strong>Mensagem final:</strong> “Não estamos propondo trabalhar menos. Estamos propondo trabalhar presencialmente quando a presença é útil e utilizar o trabalho remoto quando a atividade pode ser executada com a mesma ou maior efetividade. <strong>O serviço vem primeiro; a escala é consequência.</strong>”</div>
 <p style="margin-top:18px;font-size:10px">Portal de Soluções: <a href="https://ssness-uff.github.io/Hub-de-Planilhas/" target="_blank" rel="noopener" style="color:#dbe2f8">ssness-uff.github.io/Hub-de-Planilhas/</a> · Painel da proposta: <a href="https://ssness-uff.github.io/Jornada-de-trabalho/" target="_blank" rel="noopener" style="color:#dbe2f8">ssness-uff.github.io/Jornada-de-trabalho/</a></p>
 </section>
 
